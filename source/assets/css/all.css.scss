@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+/* Import includes */
+#bodyContent {
+    
+    @import "bootstrap";
+    @import "_partials/cover";
+    @import "_partials/home";
+    @import "_partials/sponsors";
+
+
+    color: #fff;
+    text-align: center;
+
+    .site-wrapper {
+        background-color: #333;
+    }
+
+    /* remove https link styling */
+    a[href ^="https://"].btn-secondary, .link-http  {
+        background: #fff;
+    }
+
+    .page-header {
+        width: 100%;
+        margin-bottom: 75px;
+    }
+    .page-header > h1 {
+        text-decoration: underline;
+        
+    }
+}

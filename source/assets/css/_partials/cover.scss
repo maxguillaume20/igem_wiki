@@ -1,0 +1,161 @@
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  background-color: #fff;
+  border: .05rem solid #fff;
+}
+
+
+/*
+ * Base structure
+ */
+
+html,
+body,
+#mw-content-text {
+  height: 100%;
+  background-color: #333;
+}
+
+body {
+  color: #fff;
+  text-align: center;
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+}
+
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Padding for spacing */
+.inner {
+  padding: 2rem;
+}
+
+
+/*
+ * Header
+ */
+
+.navbar {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  padding: 0;
+  z-index: 100;
+}
+
+.navbar > .container-fluid {
+  padding: 50px 20px 0 20px;
+  align-items: baseline;
+  line-height: 0;
+  background-color: #333;
+  border-bottom: 2px solid black;
+}
+
+.navbar-brand {
+  font-size: x-large;
+}
+
+.navbar-right li {
+  margin-bottom: 0;
+  bottom: 0;
+}
+.nav-link {
+  padding: 0 15px;
+}
+
+.nav-link:hover{
+  color: rgba(150,150,150,1);
+}
+
+.navbar .dropdown-menu {
+ margin-top: 0px;
+ background-color: #333;
+ border: 2px solid black;
+}
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid \9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+
+/*
+ * Inner/Cover
+ */
+
+.inner {
+        margin: auto;
+        margin-top: 95px; /* total space of iGEM navbar and our navbar */
+}
+
+.inner.cover {
+    padding: 0;
+}
+
+
+/*
+ * Footer
+ */
+
+ .footer {
+  width: 100%;
+ }
+
+
+.footer > div[class^="footer-col-"]{
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-col-left {
+  width: 75%;
+  flex-wrap: wrap;
+}
+
+.footer-sponsor-img {
+  width: 150px;
+}
+
+.footer-col-right {
+  width: 25%;
+}
+

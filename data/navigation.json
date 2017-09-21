@@ -1,0 +1,34 @@
+{
+  "links": [
+    {
+      "title": "Project",
+      "url": "#",
+      "logo": "images/project_logo_1.png",
+      "gif": "images/project_logo_1.gif"
+    },
+    {
+      "title": "Practices",
+      "url": "#",
+      "logo": "images/practice_logo.png",
+      "gif": "images/practice_logo.gif"
+    },
+    {
+      "title": "Lab",
+      "url": "#",
+      "logo": "images/project_logo_1.png",
+      "gif": "images/project_logo_1.gif"
+    },
+    {
+      "title": "Team",
+      "url": "#",
+      "logo": "images/project_logo_1.png",
+      "gif": "images/project_logo_1.gif"
+    },
+    {
+      "title": "Achievements",
+      "url": "#",
+      "logo": "images/project_logo_1.png",
+      "gif": "images/project_logo_1.gif"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+.sponsors-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.sponsor-container {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding: 30px 0;
+}
+
+.sponsor-container.alternate{
+	background-color: rgba(25,25,25,1);
+}
+
+.sponsor-title {
+	width: 100%;
+	text-align: center;
+	font-size: 30px;
+}
+
+.sponsor-image-container {
+	width: 25%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.sponsor-image {
+	width: 50%;
+}
+
+.sponsor-txt {
+	width: 70%;
+	text-align: left;
+	padding-left: 2.5%;
+}
