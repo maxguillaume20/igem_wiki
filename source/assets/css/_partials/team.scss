@@ -1,0 +1,148 @@
+/*
+* Team
+*/
+
+/* Team container */
+
+.team-sum-container {
+	min-height: 275px;
+	background-color: rgba(25,25,25,1);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	align-items: stretch !important;
+	}
+
+.team-photo-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	background-color: rgba(25,25,25,1);
+}
+
+.team-portrait {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 30px 2.5%;
+	width: 28.33333%;
+}
+
+/* Team Photos and text */
+
+.team-photo {
+	width: 100%;
+}
+
+.team-name {
+	font-size: medium;
+	width: 200px;
+
+}
+
+/* Hoover over photos */
+
+.img_wrap {
+  position: relative;
+  height: 400px;
+  width: 100%;
+}
+
+.img_wrap#super {
+  position: relative;
+  height: 428px;
+  width: 100%;
+}
+
+.img_description {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  background: rgba(169, 186, 176, 0.72);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .2s, visibility .2s;
+}
+
+.img_wrap:hover .img_description {
+  visibility: visible;
+  opacity: 1;
+}
+
+.img_text {
+	text-align: center;
+	margin-top: 5%;
+}
+
+.team-portrait-test {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 30px 2.5%;
+	width: 25%;
+}
+
+.summary-col-right-test {
+	width: 10%;
+}
+
+/* Acknowledgement */
+
+.ack-col-left {
+	width: 20%;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+.ack-header {
+	text-align: left;
+	font-size: 22px;
+	margin: 10px;
+	margin-top: 3%;
+	align-items: centre;
+}
+
+.ack-header#list {
+	text-align: center;
+	font-size: 22px;
+	margin: 10px;
+	margin-top: 3%;
+	align-items: centre;
+}
+
+.ack-text {
+	text-align: left;
+	font-size: 18px;
+	margin: 10px;
+	margin-top: 1%;
+	align-items: centre;
+}
+
+.ack-text#mo {
+	text-align: centre;
+	font-size: 20px;
+	margin: 10px;
+	margin-top: 1%;
+	align-items: centre;
+}
+
+.mo-portrait {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30%;
+	postion: relative;
+}
+
+
+
+
