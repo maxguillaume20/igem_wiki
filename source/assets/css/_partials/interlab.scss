@@ -1,0 +1,70 @@
+/*
+* Interlab
+*/
+
+
+/* InterLab Summary */
+
+.inter-text {
+	text-align: left;
+	font-size: 18px;
+	margin: 10px;
+	margin-top: 1%;
+	margin-bottom: 20px;
+	align-items: centre;
+}
+
+.inter-header {
+	text-align: centre;
+	font-size: 28px;
+	margin: 10px;
+	margin-top: 1%;
+	margin-bottom: 10px;
+	align-items: centre;
+}
+
+/* InterLab Results */
+
+
+.inter-container {
+	min-height: 275px;
+	background-color: rgba(25,25,25,1);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	align-items: stretch !important;
+
+}
+
+.interlab-left {
+	width: 10%;
+	margin-right: 10%;
+}
+
+.interlab-mid {
+	width: 60% !important;
+	vertical-align: middle;
+	display: flex;
+  	justify-content: center;
+  	align-items: center; 
+  	flex-direction: column;
+}
+
+.graph-description {
+	display: table;
+	width: 500px;
+}
+
+.interlab-graph {
+	width: 500px;
+	margin-top: 20px;
+	margin-bottom: 5px;
+}
+
+.interlab-graph-description {
+	text-align: left;
+	font-size: 16px;
+	align-items: centre;
+}
+
