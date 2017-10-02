@@ -177,6 +177,8 @@ class BaseIGemWikiManager(object):
         else:
             uri = "{}{}".format(uri, prefix)
         # append whole prefix to title
+        if title == "index":
+            title = ''
         if not title.startswith(uri):
             uri = uri.strip("/")
             title = title.strip("/")
@@ -324,7 +326,7 @@ class BaseIGemWikiManager(object):
         self.get_logger().info("Delete Page {} => {}: {}".format(title, page, result))
         return result
 
-    def upload(self, title, path, comment=None, chunk_size=10*1024*1024):
+    def upload(self, title, path, comment=None, chunk_size=100*1024*1024):
         """Will upload a file as an (image)attachment
 
         :param title: The name of the page
