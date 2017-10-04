@@ -19,7 +19,7 @@ __author__ = "Joeri Jongbloets <joeri@jongbloets.net>"
 
 class IGemFile(object):
 
-    IMAGE_EXTENSIONS = ('jpg', 'jpeg', 'png', 'bmp', 'gif','mp4')
+    IMAGE_EXTENSIONS = ('jpg', 'jpeg', 'png', 'bmp', 'gif', 'mp4')
 
     def __init__(self, path, destination=None, prefix=None, mime=None, **kwargs):
         self._path = path
@@ -440,8 +440,8 @@ class IGemUploader(BaseIGemWikiManager):
                 target = pieces[-1]
             target = target.strip("/")
             path = path.rsplit(".", 1)[0]
-            if path == "/":
-                path = "index"
+            if path == "/index":
+                path = "/"
             # we will set the parts["netloc"] to the right server
             # so we do not worry about that part
             path = self.prefix_title(path)
