@@ -1,0 +1,121 @@
+/*
+* Attributions
+*/
+
+/* Attributions Text Container */
+
+.att-text {
+	text-align: justify;
+	font-size: 20px;
+	margin: 10px;
+	margin-top: 1%;
+	margin-bottom: 20px;
+	align-items: center;
+	font-family: avenir;
+}
+
+.att-col-left {
+	width: 15%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.att-col-right {
+	width: 10%;
+	margin-left: 5%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.att-col-mid {
+	width: 70% !important;display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.vertical-text#attributions {
+	font-size: 36px; 
+	writing-mode: vertical-lr;
+	text-align: center;
+	margin: 10px 0px;
+	z-index: 100000;
+}
+
+
+/* Table Container */
+
+.table-container {
+	min-height: 275px;
+	background-color: rgba(50,50,50,1);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	align-items: stretch !important;
+}
+
+.table-container-left {
+	width: 10%;
+	margin-right: 10%;
+}
+
+.table-container-mid {
+	width: 60% !important;
+	vertical-align: middle;
+	display: flex;
+  	justify-content: center;
+  	align-items: center; 
+  	flex-direction: column;
+}
+
+.table-container-right {
+	width: 10%;
+	margin-left: 10%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Table */
+
+.attributions {
+	background-color: rgba(135, 135, 135, 1);
+	width: 900px;
+	font-size: 14px;
+	font-family: avenir;
+	text-align: center;
+	padding: 0px;
+	border-collapse: collapse;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.table-row {
+	height: 20px;
+	padding: 2px;	
+}
+
+.table-split-row {
+	background-color: rgba(61, 61, 61, 1);
+	height: 30px;
+	color: white;
+}
+
+td:nth-child(1) {
+  width: 180px;
+  text-align: left;
+}
+
+
+
+
+
+
+
+
