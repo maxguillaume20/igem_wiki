@@ -1,15 +1,40 @@
 ---
 title: Sponsors
 ---
-<div class="page-header">
-	<h1>Sponsors</h1>
+
+<div class="sponsor-sum-container">
+	<div class="sponsor-left-container">
+		
+	</div>
+	<div class="sponsor-mid-container">
+		<p class="outr-text">We are very greatfull with all our sponsors for supporting us and thereby making this project a succes. We especially want to thank both universities, the UvA and the VU, not only for the financial support, but also for their connections, help and encouragement. For the housing and lab support we are very gratefull to the Molecular Microbial Physiology lab.</p>
+	</div>
+	<div class="sponsor-right-container">
+		<div class="vertical-text-container">
+			<p class='vertical-text'>SPONSORS</p>
+		</div>
+	</div>
 </div>
+
+
+<div class="sponsor-sum-container" id="spacer">
+	<div id="team" class="home-spacer">
+		<img src='images/logo_line1.png'>
+	</div>
+</div>
+
+
 <div class="sponsors-container">
 	<% data.sponsors.each_with_index do |sponsor, index| %>
 		<div class="sponsor-container<%=cycle(index, ' alternate', '')-%>">
+			<div class="sponsor-title-left">
+				
+			</div>
 			<p class ="sponsor-title"><%= sponsor.title %></p>
 			<div class="sponsor-image-container">
-				<%= image_tag sponsor.img, :class => "sponsor-image", :id => sponsor.id %>
+				<% link_to sponsor.url, :target => "_blank" do %>
+	              <%= image_tag sponsor.img, :class => "sponsor-image", :id => sponsor.id %>
+	            <% end %>
 			</div>
 			<p class ="sponsor-txt"><%= sponsor.text %></p>
 		</div>
