@@ -4,7 +4,7 @@
 
 .section-button-container {
 	width: 100%;
-	background-color: rgba(25,25,25,1);
+	background-color: #333;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -14,17 +14,14 @@
 	position: relative;
 	width: 15%;
 	margin: 30px 1.5%;
-	border-style: solid;
-	border-width: 5px;
-	border-color: white;
 }
 
 .section-button > img {
 	position: absolute;
-	height: 70%;
-	top: 50%;
+	height: 50%;
+	top: 40%;
 	left: 50%;
-	transform: translate(-50%, -50%)
+	transform: translate(-50%, -50%);
 }
 
 .section-button > p {
@@ -32,8 +29,127 @@
 	margin: 0;
 	bottom: 0;
 	left: 50%;
-	transform: translateX(-50%)
+	transform: translateX(-50%);
+	text-transform: uppercase;
 }
+
+.section-button:hover > p {
+	color: rgba(150,150,150,1);
+}
+
+/*
+* Project
+*/
+
+.home-project-container-outer {
+	position: relative;
+	width: 100%;
+	background-color: rgba(25,25,25,1);
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+
+.home-project-container {
+	position: relative;
+	left: 20%;
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+}
+
+.line-connector-container {
+	width: 100%;
+	height: 50px;
+	position: relative;
+}
+
+.line-connector {
+	height: 100%;
+	position: absolute;
+}
+
+.line-connector#first {
+	width: 2px;
+	border-right: 2px solid white;
+	right: 50%;
+}
+
+.line-connector#second {
+	right: 50%;
+	width: 5%;
+}
+
+.line-connector#third {
+	right: 54.8%;
+	width: 39.75%;
+	border-right: 2px solid white;
+	border-bottom: 2px solid white;
+
+}
+
+.line-connector#fourth {
+	width: 2px;
+	border-right: 2px solid white;
+	left: 5%;
+}
+
+.line-connector#fifth {
+	height: 50%;
+	width: 50%;
+	border-left: 2px solid white;
+	border-bottom: 2px solid white;
+	left: 5%;
+}
+
+.line-connector#sixth {
+	width: 2px;
+	border-right: 2px solid white;
+	left: 59.5%;
+}
+
+.home-content-container {
+	width: 100%;
+	position: relative;
+	overflow: auto;
+}
+
+.home-intro-container {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	flex-wrap:nowrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.home-intro-container > img {
+	width: 15%;
+	padding: 20px 5%;
+}
+
+.home-intro-container > p {
+	text-align: left;
+	margin: 0;
+}
+
+.home-intro-container#first {
+	width: 50%;
+	left: 0;
+}
+
+.home-intro-container#second {
+	width: 45%;
+	left: 55%;
+}
+
+.vertical-text-container-outer {
+	position: absolute;
+	margin-left: 10%;
+	width: 5%;
+	right: 0%;
+}
+
 /*
 * Summaries
 */

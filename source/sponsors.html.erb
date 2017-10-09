@@ -9,7 +9,7 @@ title: Sponsors
 		<div class="sponsor-container<%=cycle(index, ' alternate', '')-%>">
 			<p class ="sponsor-title"><%= sponsor.title %></p>
 			<div class="sponsor-image-container">
-				<%= image_tag sponsor.img, :class => "sponsor-image" %>
+				<%= image_tag sponsor.img, :class => "sponsor-image", :id => sponsor.id %>
 			</div>
 			<p class ="sponsor-txt"><%= sponsor.text %></p>
 		</div>

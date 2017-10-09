@@ -3,32 +3,27 @@
     {
       "title": "Project",
       "url": "#",
-      "logo": "images/project_logo_1.png",
-      "gif": "images/project_logo_1.gif"
+      "logo": "images/sections/project.png"
     },
     {
       "title": "Practices",
       "url": "#",
-      "logo": "images/practice_logo.png",
-      "gif": "images/practice_logo.gif"
+      "logo": "images/sections/practices.png"
     },
     {
       "title": "Lab",
       "url": "#",
-      "logo": "images/project_logo_1.png",
-      "gif": "images/project_logo_1.gif"
+      "logo": "images/sections/lab.png"
     },
     {
       "title": "Team",
-      "url": "#",
-      "logo": "images/project_logo_1.png",
-      "gif": "images/project_logo_1.gif"
+      "url": "/team.html",
+      "logo": "images/sections/team.png"
     },
     {
       "title": "Achievements",
       "url": "#",
-      "logo": "images/project_logo_1.png",
-      "gif": "images/project_logo_1.gif"
+      "logo": "images/sections/achievements.png"
     }
   ]
 }

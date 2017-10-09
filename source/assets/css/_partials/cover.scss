@@ -73,23 +73,31 @@ body {
 }
 
 .navbar > .container-fluid {
-  padding: 50px 20px 0 20px;
+  padding: 30px 20px 0 20px;
   align-items: baseline;
   line-height: 0;
   background-color: #333;
-  border-bottom: 2px solid black;
+}
+
+.navbar-header {
+  display: inline;
+}
+
+.navbar-header > img {
+  height: 50px;
 }
 
 .navbar-brand {
-  font-size: x-large;
+  font-size: 20px;
 }
 
-.navbar-right li {
-  margin-bottom: 0;
+.navbar-right > li {
+  margin: 0 20px;
   bottom: 0;
 }
 .nav-link {
   padding: 0 15px;
+  text-transform: uppercase;
 }
 
 .nav-link:hover{
@@ -99,7 +107,7 @@ body {
 .navbar .dropdown-menu {
  margin-top: 0px;
  background-color: #333;
- border: 2px solid black;
+ border: none;
 }
 
 .dropdown:hover > .dropdown-menu {
