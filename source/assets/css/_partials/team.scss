@@ -22,6 +22,14 @@
 	width: 100%;
 }
 
+.team-photo-container#supervisors {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap; 
+	background-color: rgba(50,50,50,1);
+	width: 100%;
+}
+
 .team-portrait {
 	display: flex;
 	flex-direction: column;
@@ -38,6 +46,64 @@
 	margin: 10px;
 }
 
+/* Group photo and text below */
+
+.group-photo-container {
+	min-height: 275px;
+	background-color: rgba(50,50,50,1);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	align-items: stretch !important;
+}
+
+.group-left-container {
+	width: 10%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.group-right-container {
+	width: 10%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.group-mid-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 80% !important;
+}
+
+.group-mid-container#text {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 820px !important;
+}
+
+.group-photo {
+	width: 800px;
+	height: 535.6px;
+	margin-bottom: 20px;
+}
+
+.team-spacer {
+	height: 225px;
+}
+
+.photo-spacer {
+	heigth: 225px;
+	width: 107px;
+}
 /* Team Photos and text */
 
 .team-photo {
@@ -46,7 +112,7 @@
 
 .team-photo#bram {
 	width: 100%;
-	heigth: 424px;
+	height: 424px;
 }
 
 .team-name {
@@ -60,7 +126,7 @@
 
 .img_wrap {
   position: relative;
-  height: 421px;
+  height: 424px;
   width: 100%;
 }
 
@@ -78,7 +144,7 @@
 
 .img_wrap#super {
   position: relative;
-  height: 451px;
+  height: 421px;
   width: 100%;
 }
 
