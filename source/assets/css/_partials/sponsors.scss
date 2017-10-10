@@ -9,28 +9,15 @@
 .sponsor-sum-container {
 	position: relative;
 	min-height: 275px;
-	background-color: rgba(25, 25, 25,1);
+	background-color: $dark-background-color;
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 }
 
 .sponsor-left-container {
-	width: 5%;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-}
-
-.vertical-text-container-outer#sponsors {
-	margin-left: 15%;
-}
-
-.sponsor-right-container {
 	width: 10%;
-	margin-left: 5%;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -42,17 +29,7 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	width: 80% !important;
-}
-
-.sponsor-sum-container#spacer {
-	min-height: 275px;
-	background-color: rgba(50, 50, 50,1);
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	align-items: stretch !important;
+	width: 80%;
 }
 
 .sponsors-container {
@@ -65,27 +42,12 @@
 	width: 100%;
 	display: flex;
 	flex-direction: row;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	padding: 30px 0;
 }
 
 .sponsor-container.alternate{
-	background-color: rgba(25,25,25,1);
-}
-
-.sponsor-title {
-	width: 70%;
-	text-align: left;
-	font-size: 30px;
-	padding-left: 2.5%;
-}
-
-.sponsor-title-left {
-	width: 25%;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
+	background-color: $dark-background-color;
 }
 
 .sponsor-image-container {
@@ -100,8 +62,18 @@
 	width: 50%;
 }
 
+.sponsor-txt-container {
+	width: 75%;
+}
+
+.sponsor-title {
+	text-align: left;
+	font-size: 30px;
+	padding-left: 2.5%;
+}
+
 .sponsor-txt {
-	width: 70%;
+	width: 90%;
 	text-align: left;
 	padding-left: 2.5%;
 }

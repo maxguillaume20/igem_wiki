@@ -4,6 +4,15 @@
 
 /* Attributions Text Container */
 
+.att-sum-container {
+	position: relative;
+	width: 100%;
+	background-color: $dark-background-color;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
 .att-text {
 	text-align: justify;
 	font-size: 20px;

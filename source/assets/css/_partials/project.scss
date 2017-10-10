@@ -1,0 +1,25 @@
+$cellfactory-img-height: 600px;
+
+.project-cellfactory-container-outer {
+	width: 100%;
+	height: $cellfactory-img-height;
+	position: relative;
+	background-color: $dark-background-color;
+}
+
+.project-cellfactory-container {
+	width: 60%;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.project-cellfactory-container > img {
+	height: $cellfactory-img-height;
+	border: none;
+}
+
+.vertical-text-container-outer#project {
+	width: 5%;
+	margin-left: 15%;
+}
