@@ -19,8 +19,8 @@ function setDynamicHeights () {
     //Adjust info-oval sides
     var infoOvalHeight = $('.info-oval > p').height();
     $('.info-oval > div[class$="-semi-circle"]').css({'height': infoOvalHeight+'px', 'width': infoOvalHeight/2.0+'px'});
-    $('.right-semi-circle').css({'border-bottom-right-radius': infoOvalHeight+'px', 'border-top-right-radius': infoOvalHeight+'px'})
-    $('.left-semi-circle').css({'border-bottom-left-radius': infoOvalHeight+'px', 'border-top-left-radius': infoOvalHeight+'px'})
+    $('.right-semi-circle').css({'border-bottom-right-radius': infoOvalHeight+'px', 'border-top-right-radius': infoOvalHeight+'px'});
+    $('.left-semi-circle').css({'border-bottom-left-radius': infoOvalHeight+'px', 'border-top-left-radius': infoOvalHeight+'px'});
 	//Module Summaries
 	var midWidth = document.querySelector('.summary-container#modules > .summary-col-mid').offsetWidth / 2.0;
 	var midHeight = document.querySelector('.home-spacer#modules').offsetHeight / 2.0;
