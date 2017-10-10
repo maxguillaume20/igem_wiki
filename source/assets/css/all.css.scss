@@ -2,6 +2,11 @@
 
 /* Import includes */
 #bodyContent {
+
+    $main-color: rgba(88, 190, 190, 1);
+    $light-background-color: #333;
+    $dark-background-color: rgba(25,25,25,1);
+    $info-oval-color: rgba(109, 126, 128, 1);
     
     @import "bootstrap";
     @import "_partials/cover";
@@ -11,7 +16,8 @@
     @import "_partials/team";
     @import "_partials/interlab";
     @import "_partials/attributions";
-    
+    @import "_partials/outreach";
+    @import "_partials/project";
 
     color: #fff;
     text-align: center;
@@ -29,12 +35,69 @@
     font-family: avenir;
     }
 
-    .page-header {
-        width: 100%;
-        margin-bottom: 75px;
+    /* Vertical Text */
+    .vertical-text-container-outer {
+        position: absolute;
+        height: 100%;
+        right: 0%;
+        top: 0%;
+        width: 5%;
     }
-    .page-header > h1 {
-        text-decoration: underline;
-        
+
+    .vertical-text-container {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .vertical-text {
+        font-size: 42px; 
+        writing-mode: vertical-lr;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    /* Info Ovals */
+    .info-oval-container {
+        background-color: $light-background-color;
+        position: relative;
+        width: 100%;
+        overflow: auto;
+    }
+
+    .info-oval {
+        display: flex;
+        flex-direction: row;
+        width: 50%;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .info-oval > p {
+        height: 100%;
+        background-color: $info-oval-color;
+        text-align: left;
+        margin-bottom: 0;
+    }
+
+    .info-oval > div[class$="-semi-circle"] {
+        background-color: $info-oval-color;
+    }
+
+    /* Logo Spacer */
+    .logo-spacer {
+        height: 200px;
+        width: 100%;
+        background-color: $light-background-color;
+    }
+
+    .logo-spacer.alternate {
+        background-color: $dark-background-color;
+    }
+
+    .logo-spacer > img {
+        height: 100%;
     }
 }

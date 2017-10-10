@@ -11,8 +11,6 @@
 
 // Move the module summaries' height so they match up with the diagonal linear gradient
 function setDynamicHeights () {
-    console.log(5 + 6);
-    console.log("AAAAA");
 	// Section Buttons 
 	var cw = $('.section-button').width();
 	$('.section-button').css({'height':cw+'px'});

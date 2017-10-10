@@ -4,30 +4,17 @@
 
 /* Team container */
 
-.team-sum-container {
-	min-height: 275px;
-	background-color: rgba(25,25,25,1);
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	align-items: stretch !important;
-}
-
 .team-photo-container {
+	position: relative;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	background-color: rgba(25,25,25,1);
+	background-color: $dark-background-color;
 	width: 100%;
 }
 
 .team-photo-container#supervisors {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap; 
-	background-color: rgba(50,50,50,1);
-	width: 100%;
+	background-color: $light-background-color;
 }
 
 .team-portrait {
@@ -35,8 +22,8 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin: 60px 2.5%;
-	width: 28.33333%;
+	margin: 30px 2.5%;
+	width: 26.33333%;
 }
 
 .team-sum-text {
@@ -49,29 +36,32 @@
 /* Group photo and text below */
 
 .group-photo-container {
+	position: relative;
 	min-height: 275px;
 	background-color: rgba(50,50,50,1);
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: center;
-	align-items: stretch !important;
+	justify-content: flex-start;
+}
+
+.group-container {
+	width: 100%;
+	position: relative;
+	min-height: 275px;
+	background-color: rgba(25,25,25,1);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
 }
 
 .group-left-container {
 	width: 10%;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
 }
 
 .group-right-container {
 	width: 10%;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
 }
 
 .group-mid-container {
@@ -79,15 +69,7 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	width: 80% !important;
-}
-
-.group-mid-container#text {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	width: 820px !important;
+	width: 80%;
 }
 
 .group-photo {
@@ -107,12 +89,8 @@
 /* Team Photos and text */
 
 .team-photo {
-	width: 100%;
-}
-
-.team-photo#bram {
-	width: 100%;
-	height: 424px;
+	position: relative;
+	height: 100%;
 }
 
 .team-name {
@@ -133,12 +111,6 @@
 .img_wrap#mo {
   position: relative;
   height: 205px;
-  width: 100%;
-}
-
-.img_wrap#thijs {
-  position: relative;
-  height: 424px;
   width: 100%;
 }
 
@@ -172,21 +144,21 @@
 	font-family: avenir;
 }
 
-.team-portrait-test {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	margin: 30px 2.5%;
-	width: 26.3333%;
-}
-
-.summary-col-right-test {
-	width: 2%;
-	margin-right: 4%;
+.vertical-text-container-outer#team {
+	width: 5%;
+	margin-left: 1%;
 }
 
 /* Acknowledgement */
+
+.ack-container {
+	position: relative;
+	background-color: $dark-background-color;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
 
 .ack-col-left {
 	width: 20%;
@@ -194,6 +166,10 @@
 	flex-direction: row;
 	align-items: flex-start;
 	justify-content: center;
+}
+
+.ack-col-mid {
+	width: 60%;
 }
 
 .ack-header {

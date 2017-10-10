@@ -1,7 +1,3 @@
-$main-color: rgba(88, 190, 190, 1);
-$light-background-color: #333;
-$dark-background-color: rgba(25,25,25,1);
-$info-oval-color: rgba(109, 126, 128, 1);
 
 /*
 * Section Buttons
@@ -159,52 +155,14 @@ $info-oval-color: rgba(109, 126, 128, 1);
 	left: 50%;
 }
 
-.vertical-text-container-outer {
-	position: absolute;
-	height: 100%;
-	margin-left: 20%;
-	width: 5%;
-	right: 0%;
-}
-
-.vertical-text-container {
-	position: relative;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
-
-.info-oval-container {
-	background-color: $light-background-color;
-	position: relative;
-	width: 100%;
-	overflow: auto;
-}
-
-.info-oval {
-	display: flex;
-	flex-direction: row;
-	width: 50%;
-	position: relative;
-	left: 50%;
-	transform: translateX(-50%);
-}
-
-.info-oval > p {
-	height: 100%;
-	background-color: $info-oval-color;
-	text-align: left;
-	margin-bottom: 0;
-}
-
-.info-oval > div[class$="-semi-circle"] {
-	background-color: $info-oval-color;
-}
-
 .home-gif-container {
 	padding: 100px 0;
 	width: 100%;
 	background-color: $dark-background-color;
+}
+
+.vertical-text-container-outer#home {
+    margin-left: 20%;
 }
 
 

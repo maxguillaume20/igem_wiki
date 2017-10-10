@@ -1,13 +1,13 @@
 /* Sponsor Header Area */
 
 .sponsor-sum-container {
+	position: relative;
 	min-height: 275px;
 	background-color: rgba(25, 25, 25,1);
 	display: flex;
 	flex-direction: row;
-	align-items: center;
 	justify-content: center;
-	align-items: stretch !important;
+	align-items: center;
 }
 
 .sponsor-left-container {
@@ -16,6 +16,10 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
+}
+
+.vertical-text-container-outer#sponsors {
+	margin-left: 15%;
 }
 
 .sponsor-right-container {
