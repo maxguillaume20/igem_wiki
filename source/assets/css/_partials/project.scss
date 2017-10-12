@@ -1,0 +1,60 @@
+$cellfactory-img-height: 600px;
+
+.project-cellfactory-container {
+	width: 100%;
+	overflow: auto;
+	position: relative;
+	background-color: $light-background-color;
+	padding-bottom: 25px;
+}
+
+.project-cellfactory-container > img {
+	height: $cellfactory-img-height;
+}
+
+.project-cellfactory-container > p {
+	font-size: x-large;
+	margin: 0;
+}
+
+.project-text-container {
+	width: 80%;
+	padding: 0 10% 25px 10%;
+}
+
+.project-text-container > h1, .project-text-container > p {
+	text-align: left;
+}
+
+.project-text-container#intro {
+	background-color: $dark-background-color;
+}
+
+.info-oval-container#project {
+	padding-bottom: 25px;
+}
+
+.modules-summary-container-outer {
+	width: 100%;
+	background-color: $dark-background-color;
+	display: flex;
+	flex-direction: row;
+	flew-wrap: nowrap;
+	justify-content: center;
+}
+
+.modules-summary-container-outer > .logo-spacer {
+	height: 415px;
+	position: absolute;
+	left: 0%;
+	background-image: -webkit-linear-gradient(-102.5deg, $light-background-color 50%, $dark-background-color 50%);
+}
+
+.modules-summary-container-outer > .logo-spacer > img{
+	height: 200px;
+}
+
+.summary-modules-outer {
+	z-index: 400;
+	justify-content: flex-start !important;
+}

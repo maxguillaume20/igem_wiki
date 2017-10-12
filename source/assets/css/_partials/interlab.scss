@@ -16,22 +16,13 @@
 }
 
 .inter-header {
-	text-align: left !important;
+	text-align: center !important;
 	font-size: 28px;
 	margin: 10px;
 	margin-top: 1%;
 	margin-bottom: 10px;
 	align-items: left;
 	font-family: avenir;
-}
-
-.interlab-right {
-	width: 10%;
-	margin-left: 5%;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
 }
 
 .interlab-sum-mid {
@@ -48,7 +39,7 @@
 
 .inter-container {
 	min-height: 275px;
-	background-color: rgba(50, 50, 50 ,1);
+	background-color: $light-background-color;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -57,7 +48,7 @@
 }
 
 .interlab-left {
-	width: 3.5%;
+	width: 9.25%;
 }
 
 .interlab-mid {
@@ -69,11 +60,14 @@
   	flex-direction: column;
 }
 
+.interlab-right {
+	width: 9.25%;
+}
+
 .graph-container {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	background-color: rgba(50,50,50,1);
 	width: 100%;
 	align-items: center;
 	justify-content: center;
@@ -122,34 +116,4 @@
 	margin-bottom: 20px;
 	align-items: center;
 	font-family: avenir;
-}
-
-.proto-container {
-	flex-direction: column;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	width: 190px;
-	heigth: 100%;
-	margin-right: 33px;
-    margin-left: 33px;
-    margin-top: 30px;
-}
-
-.proto-container#total {
-	align-items: center;
-	justify-content: center;
-	margin-left: 0px;
-	margin-right: 0px;
-	width: 768px;
-	flex-direction: row;
-}
-
-.proto-icon {
-	width: 150px;
-	heigth: 100%;
-}
-
-.proto-name {
-	width: 150px;
 }

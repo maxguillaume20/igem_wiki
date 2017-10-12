@@ -11,6 +11,8 @@ div[class^="summary-"] {
 }
 
 .summary-container {
+	position: relative;
+	justify-content: flex-start !important;
 	min-height: 275px;
 	align-items: stretch !important;
 	background-color: rgba(25,25,25,1);
@@ -28,14 +30,6 @@ div[class^="summary-"] {
 
 .summary-col-mid {
 	width: 60% !important;
-}
-
-.vertical-text {
-	font-size: 42px; 
-	writing-mode: vertical-lr;
-	text-align: center;
-	margin: 10px 0px;
-	z-index: 100000;
 }
 
 .summary-text {

@@ -4,6 +4,15 @@
 
 /* Attributions Text Container */
 
+.att-sum-container {
+	position: relative;
+	width: 100%;
+	background-color: $dark-background-color;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
 .att-text {
 	text-align: justify;
 	font-size: 20px;
@@ -11,7 +20,6 @@
 	margin-top: 1%;
 	margin-bottom: 20px;
 	align-items: center;
-	font-family: avenir;
 }
 
 .att-col-left {
@@ -22,28 +30,13 @@
 	justify-content: center;
 }
 
-.att-col-right {
-	width: 10%;
-	margin-left: 5%;
+.att-col-mid {
+	width: 70%;
+	min-height: 320px;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-}
-
-.att-col-mid {
-	width: 70% !important;display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-}
-
-.vertical-text#attributions {
-	font-size: 36px; 
-	writing-mode: vertical-lr;
-	text-align: center;
-	margin: 10px 0px;
-	z-index: 100000;
 }
 
 
@@ -51,7 +44,7 @@
 
 .table-container {
 	min-height: 275px;
-	background-color: rgba(50,50,50,1);
+	background-color: $light-background-color;
 	display: flex;
 	flex-direction: row;
 	align-items: center;

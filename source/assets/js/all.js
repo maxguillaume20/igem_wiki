@@ -10,27 +10,30 @@
 
 
 // Move the module summaries' height so they match up with the diagonal linear gradient
-function setDynamicHeights () {
-    console.log(5 + 6);
-    console.log("AAAAA");
+function setDynamicSizes () {
 	// Section Buttons 
 	var cw = $('.section-button').width();
-	$('.section-button').css({'height':cw+'px'});
+	$('.section-button').css('height', cw+'px');
+    // Adjust line connector
+    var lineWidth = Math.floor($('.line-connector-container').width() * (0.5 - parseInt($('.line-connector#first').css('left'))/$('.line-connector-container').width()) - $('.logo-spacer > img').width()/2);
+    $('.line-connector#first').css('width', lineWidth+'px');
     //Adjust info-oval sides
     var infoOvalHeight = $('.info-oval > p').height();
     $('.info-oval > div[class$="-semi-circle"]').css({'height': infoOvalHeight+'px', 'width': infoOvalHeight/2.0+'px'});
     $('.right-semi-circle').css({'border-bottom-right-radius': infoOvalHeight+'px', 'border-top-right-radius': infoOvalHeight+'px'});
     $('.left-semi-circle').css({'border-bottom-left-radius': infoOvalHeight+'px', 'border-top-left-radius': infoOvalHeight+'px'});
 	//Module Summaries
-	var midWidth = document.querySelector('.summary-container#modules > .summary-col-mid').offsetWidth / 2.0;
-	var midHeight = document.querySelector('.home-spacer#modules').offsetHeight / 2.0;
-	var angle = 25 * Math.PI / 180.0;
+	var midWidth = document.querySelector('.modules-summary-container-outer > .logo-spacer').offsetWidth / 2.0;
+	var midHeight = document.querySelector('.modules-summary-container-outer > .logo-spacer').offsetHeight / 2.0;
+	var angle = -12.5 * Math.PI / 180.0;
+    var buffer = 100;
     var icons = document.getElementsByClassName('summary-modules-outer');
     for (i=0; i<icons.length; i++){
-        var marginTop = midHeight - (icons[i].offsetLeft - midWidth) * Math.tan(angle);
-    	icons[i].style.marginTop = marginTop.toString() + 'px';
+        var marginTop = midHeight - (icons[i].offsetLeft - midWidth) * Math.tan(angle) + buffer;
+        icons[i].style.marginTop = marginTop.toString() + 'px';
+        
     }
 };
-window.onload = setDynamicHeights;
-setTimeout(setDynamicHeights, 1000);
-window.onresize = setDynamicHeights;
+window.onload = setDynamicSizes;
+setTimeout(setDynamicSizes, 1000);
+window.onresize = setDynamicSizes;
