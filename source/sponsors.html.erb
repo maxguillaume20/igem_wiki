@@ -32,8 +32,8 @@ title: Sponsors
 			</div>
 			<p class ="sponsor-title"><%= sponsor.title %></p>
 			<div class="sponsor-image-container">
-				<% link_to sponsor.url, :target => "_blank" do %>
-	              <%= image_tag sponsor.img, :class => "sponsor-image", :id => sponsor.id, :order => sponsor.order %>
+				<% link_to sponsor.url, :target => "_blank", :order => sponsor.order  do %>
+	              <%= image_tag sponsor.img, :class => "sponsor-image", :id => sponsor.id%>
 	            <% end %>
 			</div>
 			<p class ="sponsor-txt"><%= sponsor.text %></p>
