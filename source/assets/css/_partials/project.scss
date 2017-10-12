@@ -1,25 +1,60 @@
 $cellfactory-img-height: 600px;
 
-.project-cellfactory-container-outer {
-	width: 100%;
-	height: $cellfactory-img-height;
-	position: relative;
-	background-color: $dark-background-color;
-}
-
 .project-cellfactory-container {
-	width: 60%;
+	width: 100%;
+	overflow: auto;
 	position: relative;
-	left: 50%;
-	transform: translateX(-50%);
+	background-color: $light-background-color;
+	padding-bottom: 25px;
 }
 
 .project-cellfactory-container > img {
 	height: $cellfactory-img-height;
-	border: none;
 }
 
-.vertical-text-container-outer#project {
-	width: 5%;
-	margin-left: 15%;
+.project-cellfactory-container > p {
+	font-size: x-large;
+	margin: 0;
+}
+
+.project-text-container {
+	width: 80%;
+	padding: 0 10% 25px 10%;
+}
+
+.project-text-container > h1, .project-text-container > p {
+	text-align: left;
+}
+
+.project-text-container#intro {
+	background-color: $dark-background-color;
+}
+
+.info-oval-container#project {
+	padding-bottom: 25px;
+}
+
+.modules-summary-container-outer {
+	width: 100%;
+	background-color: $dark-background-color;
+	display: flex;
+	flex-direction: row;
+	flew-wrap: nowrap;
+	justify-content: center;
+}
+
+.modules-summary-container-outer > .logo-spacer {
+	height: 415px;
+	position: absolute;
+	left: 0%;
+	background-image: -webkit-linear-gradient(-102.5deg, $light-background-color 50%, $dark-background-color 50%);
+}
+
+.modules-summary-container-outer > .logo-spacer > img{
+	height: 200px;
+}
+
+.summary-modules-outer {
+	z-index: 400;
+	justify-content: flex-start !important;
 }

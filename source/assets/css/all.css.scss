@@ -70,6 +70,7 @@
     .info-oval {
         display: flex;
         flex-direction: row;
+        flex-wrap: nowrap;
         width: 50%;
         position: relative;
         left: 50%;
