@@ -22,6 +22,12 @@ function setDynamicSizes () {
     $('.info-oval > div[class$="-semi-circle"]').css({'height': infoOvalHeight+'px', 'width': infoOvalHeight/2.0+'px'});
     $('.right-semi-circle').css({'border-bottom-right-radius': infoOvalHeight+'px', 'border-top-right-radius': infoOvalHeight+'px'});
     $('.left-semi-circle').css({'border-bottom-left-radius': infoOvalHeight+'px', 'border-top-left-radius': infoOvalHeight+'px'});
+    // team portraits
+    var teamPhotos = document.getElementsByClassName('team-photo');
+    var imgWraps = document.getElementsByClassName('img_wrap');
+    for (i=0; i<imgWraps.length; i++){
+        imgWraps[i].style.height = teamPhotos[i].offsetHeight;
+    }
 	//Module Summaries
 	var midWidth = document.querySelector('.modules-summary-container-outer > .logo-spacer').offsetWidth / 2.0;
 	var midHeight = document.querySelector('.modules-summary-container-outer > .logo-spacer').offsetHeight / 2.0;

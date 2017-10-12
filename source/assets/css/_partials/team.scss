@@ -18,6 +18,7 @@
 }
 
 .team-portrait {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -100,9 +101,10 @@
 /* Hoover over photos */
 
 .img_wrap {
-  position: relative;
-  width: 100%;
-  overflow: auto;
+	position: absolute;
+	top: 0%;
+  	width: 100%;
+  	overflow: auto;
 }
 
 .img_wrap#mo {
