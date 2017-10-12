@@ -1,0 +1,137 @@
+/*
+* Labjournal
+*/
+
+/* Main containers */
+
+.labj-container-black {
+	position: relative;
+	min-height: 275px;
+	background-color: rgba(25, 25, 25 ,1);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	align-items: stretch !important;
+}
+
+.labj-left-col {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 15%;
+}
+
+.labj-right-col {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 5%;
+	margin-left: 10%;
+
+}
+
+.labj-mid-col {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 70% !important;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+/* Week containers */
+
+.week-container {
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+	background-color: rgba(50, 50, 50,1);
+	border-radius: 15px;
+	margin-top: 5px;
+	flex-direction: row;
+}
+
+.week-text-container {
+	flex-direction: row;
+	display: flex;
+	border: 1px solid gray;
+	border-radius: 15px;
+}
+
+.week-text {
+	font-size: 18px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 5%;
+	text-align: left;
+	flex-direction: row;
+}
+
+.arrow-text {
+	font-size: 18px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 5%;
+	text-align: right;
+	flex-direction: row;
+}
+
+.week-number-container {
+	width: 70%;
+}
+
+.arrow-container {
+	width: 30%;
+	margin-right: 5%;
+	align-items: right;
+}
+/* Lab Journal Modules */
+
+.labj-main-con {
+	width: 90%;
+	margin-left: 5%;
+	margin-rigth: 5%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: stretch !important;
+}
+
+.labj-mod-holder {
+	flex-direction: row;
+	justify-content: center;
+	display: flex;
+	margin: 20px;
+}
+
+.labj-mod-icon {
+	width: 20%;
+	flex-direction: column;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+.labj-icon {
+	width: 60px;
+	margin: 10%;
+	justify-content: center;
+	vertical-align: middle;
+}
+
+.labj-mod-cont {
+	width: 80%;
+	text-align: justify;
+	justify-content: center;
+	align-items: center;
+}
+
+.labj-mod-cont > img{
+	width: 80%;
+	margin: 10px;
+}
+
