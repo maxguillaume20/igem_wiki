@@ -5,6 +5,7 @@
 /* Main containers */
 
 .labj-container-black {
+	position: relative;
 	min-height: 275px;
 	background-color: rgba(25, 25, 25 ,1);
 	display: flex;
@@ -125,6 +126,8 @@
 .labj-mod-cont {
 	width: 80%;
 	text-align: justify;
+	justify-content: center;
+	align-items: center;
 }
 
 .labj-mod-cont > img{
