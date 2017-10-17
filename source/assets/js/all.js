@@ -22,6 +22,11 @@ function setDynamicSizes () {
     $('.info-oval > div[class$="-semi-circle"]').css({'height': infoOvalHeight+'px', 'width': infoOvalHeight/2.0+'px'});
     $('.right-semi-circle').css({'border-bottom-right-radius': infoOvalHeight+'px', 'border-top-right-radius': infoOvalHeight+'px'});
     $('.left-semi-circle').css({'border-bottom-left-radius': infoOvalHeight+'px', 'border-top-left-radius': infoOvalHeight+'px'});
+    // team portraits
+    var teamPhotoAspectRatio = 1.23;
+    var teamImageWrapWidth = $('.team-image-wrap').width();
+    var teamImageWrapHeight = teamImageWrapWidth * teamPhotoAspectRatio;
+    $('.team-image-wrap').css('height', teamImageWrapHeight+'px');
 	//Module Summaries
 	var midWidth = document.querySelector('.modules-summary-container-outer > .logo-spacer').offsetWidth / 2.0;
 	var midHeight = document.querySelector('.modules-summary-container-outer > .logo-spacer').offsetHeight / 2.0;
