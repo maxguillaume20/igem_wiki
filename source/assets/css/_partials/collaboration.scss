@@ -1,0 +1,48 @@
+/*
+* Collaboration
+*/
+
+/* Summary Collaboration */
+
+.collab-sum-container {
+	min-height: 360px;
+	background-color: $dark-background-color;
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	align-items: stretch !important;
+}
+
+.collab-main-container {
+	min-height: 200px;
+	background-color: $dark-background-color;
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	align-items: stretch !important;
+	vertical-align: middle;
+}
+
+.collab-main-mid {
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+	justify-content: center;
+	width: 85% !important;
+	margin-bottom: 40px;
+}
+
+.collab-header {
+	text-align: justify;
+	font-size: 22px;
+	margin: 5px;
+	align-items: left;
+	margin-top: 15px;
+}
+
+.collab-text {
+	text-align: justify;
+	font-size: 18px;
+	margin: 5px;
+	align-items: left;
+}

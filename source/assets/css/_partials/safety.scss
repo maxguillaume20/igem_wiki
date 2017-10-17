@@ -1,0 +1,99 @@
+/*
+* Safety
+*/
+
+/* Summary Safety */
+
+.safety-sum-container {
+	min-height: 275px;
+	background-color: $dark-background-color;
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	align-items: stretch !important;
+}
+
+.safety-sum-mid {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 75% !important;
+	vertical-align: middle;
+}
+
+.safety-sum-left {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 20%;
+}
+
+/* Safety Main Text */
+
+.safety-main-container {
+	min-height: 200px;
+	background-color: $light-background-color;
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	align-items: stretch !important;
+}
+
+.safety-main-left {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 10%;
+}
+
+.safety-main-mid {
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+	justify-content: center;
+	width: 85% !important;
+	margin-bottom: 40px;
+}
+
+.safety-main-mid > figure {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 60%;
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+.safety-img {
+	width: 100%;
+	margin-top: 5%;
+}
+
+.safety-header {
+	text-align: justify;
+	font-size: 22px;
+	margin: 5px;
+	align-items: left;
+	margin-top: 15px;
+}
+
+.safety-text {
+	text-align: justify;
+	font-size: 18px;
+	margin: 5px;
+	align-items: left;
+}
+
+.safety-text#figure {
+	text-align: justify;
+	font-size: 16px;
+	margin: 5px;
+	align-items: left;
+}
+
+
+

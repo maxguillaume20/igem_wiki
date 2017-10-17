@@ -2,7 +2,7 @@
 
 /* Import includes */
 #bodyContent {
-
+    
     $main-color: rgba(88, 190, 190, 1);
     $light-background-color: #333;
     $dark-background-color: rgba(25,25,25,1);
@@ -19,6 +19,8 @@
     @import "_partials/outreach";
     @import "_partials/project";
     @import "_partials/labjournal";
+    @import "_partials/safety";
+    @import "_partials/collaboration";
 
 
     color: #fff;
