@@ -7,6 +7,8 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title><%= current_page.data.title %></title>
+  <!-- icons -->
+  <!-- <link rel="stylesheet" href="/assets/css/font-awesome-4.7.0/css/font-awesome.min.css"> -->
 	<!-- include normalizer -->
 	<%= stylesheet_link_tag "normalize" %>
 	<!-- include auto generated css -->
@@ -72,13 +74,18 @@
       <div class="footer">
         <div class="footer-col-left">
           <% data.sponsors.each do |sponsor| %>
-            <% link_to sponsor.url do %>
-              <%= image_tag sponsor.img, :class => "footer-sponsor-img" %>
-            <% end %>
+            <a href="<%=sponsor.url-%>" style = "order:<%=sponsor.footorder-%>" target="_blank">
+              <%= image_tag sponsor.img, :class => "footer-sponsor-img", :id => sponsor.id %>
+            </a>
           <% end %>
         </div>
         <div class="footer-col-right">
-
+          <a href="mailto:igem17.ams@gmail.com" target="_top">
+            <img src="images/email_logo.jpg" height="50px">
+          </a>
+          <a href="https://www.facebook.com/igem2017amsterdam/" target="_blank">
+            <img src="images/facebook_logo.png" height="50px">
+          </a>
         </div>
       </div>
     </div>

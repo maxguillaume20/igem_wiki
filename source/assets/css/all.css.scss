@@ -9,6 +9,9 @@
     $info-oval-color: rgba(109, 126, 128, 1);
 
     @import "bootstrap";
+    @import "font-awesome-sprockets";
+    @import "font-awesome";
+
     @import "_partials/cover";
     @import "_partials/home";
     @import "_partials/old_home";

@@ -2,30 +2,7 @@
 * Team
 */
 
-/* Team container */
 
-.team-photo-container {
-	position: relative;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	background-color: $dark-background-color;
-	width: 100%;
-}
-
-.team-photo-container#supervisors {
-	background-color: $light-background-color;
-}
-
-.team-portrait {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	margin: 30px 2.5%;
-	width: 26.33333%;
-}
 
 .team-sum-text {
 	font-family: avenir;
@@ -87,6 +64,36 @@
 	heigth: 225px;
 	width: 107px;
 }
+
+/* Team container */
+
+.team-photo-container {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	background-color: $dark-background-color;
+	width: 100%;
+}
+
+.team-photo-container#supervisors {
+	background-color: $light-background-color;
+}
+
+.team-portrait {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 30px 2.5%;
+	width: 26.33333%;
+}
+
+.team-portrait#mohammad {
+	margin-top: 185px;
+}
+
 /* Team Photos and text */
 
 .team-photo {
@@ -100,21 +107,60 @@
 
 /* Hoover over photos */
 
-.img_wrap {
-	position: absolute;
-	top: 0%;
+.team-image-wrap {
+	position: relative;
+	background-size: 100% 100%;
   	width: 100%;
   	overflow: auto;
 }
 
-.img_wrap#mo {
-  position: relative;
-  height: 205px;
-  width: 100%;
+.team-image-wrap#bram {
+	background-image: url("http://2017.igem.org/wiki/images/b/be/Bram1.jpg");
+}
+
+.team-image-wrap#yuki {
+	background-image: url("http://2017.igem.org/wiki/images/a/a4/Yuki.jpg");
+}
+
+.team-image-wrap#max {
+	background-image: url("http://2017.igem.org/wiki/images/8/84/Max.jpg");
+}
+
+.team-image-wrap#age {
+	background-image: url("http://2017.igem.org/wiki/images/d/d6/Age.jpg");
+}
+
+.team-image-wrap#josine {
+	background-image: url("http://2017.igem.org/wiki/images/7/7f/Josine.jpg");
+}
+
+.team-image-wrap#thijs {
+	background-image: url("http://2017.igem.org/wiki/images/d/d7/Thijs.jpg");
+}
+
+.team-image-wrap#filipe {
+	background-image: url("http://2017.igem.org/wiki/images/4/42/Filipe.jpg");
+}
+
+.team-image-wrap#wei {
+	background-image: url("http://2017.igem.org/wiki/images/b/ba/Wei.jpg");
+}
+
+.team-image-wrap#joeri {
+	background-image: url("http://2017.igem.org/wiki/images/d/d4/Joeri.jpg");
+}
+
+.mo-team-image-wrap {
+	position: relative;
+	background-image: url("http://2017.igem.org/wiki/images/7/75/Mohammad.jpg");
+	background-size: 100% 100%;
+  	width: 200px;
+  	height: 246px;
+  	overflow: auto;
 }
 
 .img_description {
-  position: absolute;
+  position: relative;
   top: 0%;
   left: 0%;
   min-height: 100%;
@@ -126,7 +172,12 @@
   transition: opacity 1s, visibility .2s;
 }
 
-.img_wrap:hover .img_description {
+.mo-team-image-wrap:hover .img_description {
+  visibility: visible;
+  opacity: 1;
+}
+
+.team-image-wrap:hover .img_description {
   visibility: visible;
   opacity: 1;
 }
@@ -170,7 +221,6 @@
 	margin: 10px;
 	margin-top: 20px;
 	align-items: center;
-	font-family: avenir;
 }
 
 .ack-text {
@@ -180,7 +230,6 @@
 	margin-top: 1%;
 	margin-bottom: 20px;
 	align-items: left;
-	font-family: avenir;
 }
 
 .ack-text#list {
@@ -190,32 +239,20 @@
 	margin-top: 1%;
 	margin-bottom: 20px;
 	align-items: left;
-	font-family: avenir;
 }
 
-.mo-portrait {
+.link-logo-wrapper {
+	width: 100%;
+	height: 100%;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	margin-top: 185px;
-	postion: relative;
+	background: none !important;
 }
 
 .link-logo {
 	width: 80px;
-	margin-top: 67%;
-	opacity: 0.7;
-}
-
-/* Vertical text */
-
-.side-text {
-	font-size: 42px; 
-	writing-mode: vertical-lr;
-	text-align: center;
-	margin: 10px 0px;
-	z-index: 100000;
 }
 
 
