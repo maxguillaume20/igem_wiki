@@ -2,12 +2,74 @@
 * Labjournal
 */
 
-/* Main containers */
+/* Lab Journal Summary Containers */
 
 .labj-container-black {
 	position: relative;
-	min-height: 275px;
+	width: 100%;
 	background-color: $dark-background-color;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	min-height: 275px;
+}
+
+.labj-sum-left {
+	width: 20%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.labj-sum-mid {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 70% !important;
+}
+
+.labj-sum-text-container {
+	text-align: justify;
+	font-size: 18px;
+	align-items: left;
+	font-family: avenir;
+	margin: 20px;
+}
+
+.labj-sum-mod-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin-top: 30px;
+}
+
+.labj-sum-icon-container {
+	flex-direction: column;
+	width: 20%;
+	margin-bottom: 20px;
+}
+
+.labj-sum-icon {
+	width: 50%;
+	margin-bottom: 10px;
+}
+
+.labj-icon-text {
+	text-align: center;
+	font-size: 18px;
+	align-items: center;
+}
+
+
+/* Main containers */
+
+.labj-container-gray {
+	position: relative;
+	min-height: 275px;
+	background-color: $light-background-color;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -49,7 +111,7 @@
 	width: 80%;
 	margin-left: 10%;
 	margin-right: 10%;
-	background-color: rgba(50, 50, 50,1);
+	background-color: $dark-background-color;
 	border-radius: 15px;
 	margin-top: 5px;
 	flex-direction: row;
@@ -131,7 +193,10 @@
 }
 
 .labj-mod-cont > img{
-	width: 80%;
+	width: 100%;
 	margin: 10px;
+	justify-content: center;
+	align-items: center;
+	display: flex;
 }
 

@@ -2,8 +2,6 @@
 * Team
 */
 
-
-
 .team-sum-text {
 	font-family: avenir;
 	text-align: justify;
@@ -35,7 +33,7 @@
 }
 
 .group-left-container {
-	width: 10%;
+	width: 20%;
 }
 
 .group-right-container {
@@ -47,7 +45,19 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
+	width: 70%;
+}
+
+.groupphoto-mid {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
 	width: 80%;
+}
+
+.groupphoto-left {
+	width: 10%;
 }
 
 .group-photo {
