@@ -8,7 +8,5 @@ gem 'middleman-sprockets'
 gem 'bootstrap', '~> 4.0.0.beta'
 gem "jquery-middleman"
 
-gem 'font-awesome-sass', '~> 4.7.0'
-
 gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 gem 'wdm', '~> 0.1', platforms: [:mswin, :mingw]
