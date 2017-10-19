@@ -2,7 +2,7 @@
   "links": [
     {
       "title": "Project",
-      "url": "/project.html",
+      "url": "/Project.html",
       "logo": "images/sections/project.png"
     },
     {
@@ -17,7 +17,7 @@
     },
     {
       "title": "Team",
-      "url": "/team.html",
+      "url": "/Team.html",
       "logo": "images/sections/team.png"
     },
     {
