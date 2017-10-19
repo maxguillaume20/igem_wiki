@@ -1,0 +1,68 @@
+/*
+* Protocol
+*/
+
+/* Protocol Summary Text */
+
+.proto-sum-container {
+	min-height: 275px;
+	background-color: $dark-background-color;
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	align-items: stretch !important;
+}
+
+.proto-sum-left {
+	width: 20%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.proto-sum-mid {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 70% !important;
+}
+
+.proto-icon {
+	width: 50%;
+}
+
+/* Protocol PDF Container */
+
+.proto-pdf-container {
+	min-height: 275px;
+	background-color: $light-background-color;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+}
+
+.proto-pdf-title {
+	width: 80%;
+	text-align: left;
+}
+
+.proto-header {
+	text-align: justify;
+	font-size: 22px;
+	margin: 5px;
+	align-items: left;
+	margin-top: 15px;
+}
+
+.proto-pdf {
+	width: 80%;
+	height: 500%;
+	margin-bottom: 50px;
+}
+
+
+
