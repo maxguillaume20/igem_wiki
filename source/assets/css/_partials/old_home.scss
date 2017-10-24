@@ -2,49 +2,7 @@
 * Summaries
 */
 
-/* Summary container and columns */
-div[class^="summary-"] {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-}
 
-.summary-container {
-	position: relative;
-	justify-content: flex-start !important;
-	min-height: 275px;
-	align-items: stretch !important;
-	background-color: rgba(25,25,25,1);
-}
-
-/* Summary columns */
-.summary-col-left {
-	width: 20%;
-}
-
-.summary-col-right {
-	width: 10%;
-	margin-left: 10%;
-}
-
-.summary-col-mid {
-	width: 60% !important;
-}
-
-.summary-text {
-	text-align: left;
-	font-size: 24px;
-	margin: 10px;
-}
-
-.in-text-link {
-	color:#00ffff
-}
-
-.in-text-link:hover {
-	color:#008888
-}
 
 /*Spacer*/
 
