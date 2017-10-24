@@ -23,7 +23,7 @@
     @import "_partials/collaboration";
     @import "_partials/protocol";
 
- 
+
     color: #fff;
     text-align: center;
 
@@ -38,6 +38,39 @@
 
     * {
     font-family: avenir !important;
+    }
+
+
+    /* Summary container and columns */
+    div[class^="summary-"] {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .summary-container {
+        position: relative;
+        justify-content: flex-start !important;
+        min-height: 275px;
+        align-items: stretch !important;
+        background-color: $dark-background-color;
+        overflow: hidden;
+    }
+
+    /* Summary columns */
+    .summary-col-left {
+        width: 20%;
+    }
+
+    .summary-col-mid {
+        width: 70%;
+    }
+
+    .summary-text {
+        text-align: left;
+        font-size: 18px;
+        margin: 10px 0;
     }
 
     /* Vertical Text */
@@ -105,5 +138,14 @@
 
     .logo-spacer > img {
         height: 100%;
+    }
+
+    .in-text-link {
+        color:$main-color;
+        font-size: inherit;
+    }
+
+    .in-text-link:hover {
+        color:#008888;
     }
 }

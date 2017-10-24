@@ -2,36 +2,6 @@
 * Sponsors
 */
 
-
-
-/* Sponsor Header Area */
-
-.sponsor-sum-container {
-	position: relative;
-	min-height: 275px;
-	background-color: $dark-background-color;
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	align-items: center;
-}
-
-.sponsor-left-container {
-	width: 20%;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-}
-
-.sponsor-mid-container {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	width: 70%;
-}
-
 .sponsors-container {
 	width: 100%;
 	display: flex;

@@ -4,32 +4,8 @@
 
 /* Summary Collaboration */
 
-.collab-sum-container {
-	min-height: 275px;
-	background-color: $dark-background-color;
-	display: flex;
-	flex-direction: row;
-	position: relative;
-	align-items: stretch !important;
-}
-
-.collab-main-container {
-	min-height: 200px;
-	background-color: $dark-background-color;
-	display: flex;
-	flex-direction: row;
-	position: relative;
-	align-items: stretch !important;
-	vertical-align: middle;
-}
-
-.collab-main-mid {
-	display: flex;
-	flex-direction: column;
-	align-items: left;
-	justify-content: center;
-	width: 85% !important;
-	margin-bottom: 40px;
+.summary-container#collaborations {
+	min-height: 350px;
 }
 
 .collab-header {
