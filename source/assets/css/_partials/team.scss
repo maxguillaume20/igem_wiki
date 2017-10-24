@@ -101,7 +101,7 @@
 }
 
 .team-portrait#mohammad {
-	margin-top: 185px;
+	margin-top: 150px;
 }
 
 /* Team Photos and text */
@@ -222,7 +222,7 @@
 }
 
 .ack-col-mid {
-	width: 60%;
+	width: 70%;
 }
 
 .ack-header {
@@ -230,6 +230,14 @@
 	font-size: 22px;
 	margin: 10px;
 	margin-top: 20px;
+	align-items: center;
+}
+
+.ack-header#mo {
+	text-align: left;
+	font-size: 22px;
+	margin: 10px;
+	margin-top: 45px;
 	align-items: center;
 }
 

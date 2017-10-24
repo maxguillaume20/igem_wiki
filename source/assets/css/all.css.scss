@@ -23,7 +23,7 @@
     @import "_partials/collaboration";
     @import "_partials/protocol";
 
-
+ 
     color: #fff;
     text-align: center;
 
@@ -37,7 +37,7 @@
     }
 
     * {
-    font-family: avenir;
+    font-family: avenir !important;
     }
 
     /* Vertical Text */
