@@ -22,6 +22,7 @@
     @import "_partials/safety";
     @import "_partials/collaboration";
     @import "_partials/protocol";
+    @import "_partials/modules";
 
 
     color: #fff;
@@ -37,9 +38,12 @@
     }
 
     * {
-    font-family: avenir !important;
+        font-family: Avenir, verdana !important;
     }
 
+    p, h1 {
+        text-align: justify !important;
+    }
 
     /* Summary container and columns */
     div[class^="summary-"] {
@@ -55,7 +59,6 @@
         min-height: 275px;
         align-items: stretch !important;
         background-color: $dark-background-color;
-        overflow: hidden;
     }
 
     /* Summary columns */
@@ -65,6 +68,7 @@
 
     .summary-col-mid {
         width: 70%;
+        justify-content: flex-start !important;
     }
 
     .summary-text {
@@ -147,5 +151,9 @@
 
     .in-text-link:hover {
         color:#008888;
+    }
+
+    .text-highlight {
+        color: $main-color;
     }
 }

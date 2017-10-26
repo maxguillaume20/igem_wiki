@@ -1,0 +1,43 @@
+<% wrap_layout :layout do %>
+	<div class="summary-container">
+		<div class="summary-col-left">
+			<img class="animated-module-icon" src='<%= yield_content :icon_src %>'>
+			
+		</div>
+		<div class="summary-col-mid">
+			<p class="summary-text">
+				Goal<br>
+				<%= yield_content :abstract_goal %><br>
+				<br>
+				Results<br>
+				<%= yield_content :abstract_results %><br>
+				<br>
+				Conclusions<br>
+				<%= yield_content :abstract_conclusions %>
+			</p>
+		</div>
+		<div class="vertical-text-container-outer">
+			<div class="vertical-text-container">
+				<p class="vertical-text"><%= yield_content :vertical_text %></p>
+			</div>
+		</div>
+	</div>
+	<div class="module-outer-container">
+		<div class="module-section-container">
+			<h1>Introduction</h1>
+			<p><%= yield_content :introduction %></p>
+		</div>
+		<div class="module-section-container">
+			<h1>Results & Discussion</h1>
+			<p><%= yield_content :results %></p>
+		</div>
+		<div class="module-section-container">
+			<h1>Conclusion</h1>
+			<p><%= yield_content :conclusion %></p>
+		</div>
+		<div class="module-section-container">
+			<h1>Methods</h1>
+			<p><%= yield_content :methods %></p>
+		</div>
+	</div>
+<% end %>

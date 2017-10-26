@@ -1,20 +1,16 @@
 ---
 title: Export
+layout: layouts/module_layout
 ---
 
-<div class="summary-container">
-	<div class="summary-col-left">
-		<img class="animated-module-icon" src='images/transporter_icon.png'>
-	</div>
-	<div class="summary-col-mid">
-		<p class="summary-text"></p>
-	</div>
-	<div class="vertical-text-container-outer">
-		<div class="vertical-text-container">
-			<p class="vertical-text">Export</p>
-		</div>
-	</div>
-</div>
-<div class="logo-spacer">
-	<img src='images/logo_line1.png'>
-</div>
+<% content_for :icon_src do %>
+  images/transporter_icon.png
+<% end %>
+
+<% content_for :abstract do %>
+  Abstract
+<% end %>
+
+<% content_for :verticaltext do %>
+  export
+<% end %>

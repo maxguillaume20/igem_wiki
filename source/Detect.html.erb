@@ -1,20 +1,22 @@
 ---
 title: Detect
+layout: layouts/module_layout
 ---
 
-<div class="summary-container">
-	<div class="summary-col-left">
-		<img class="animated-module-icon" src='images/sensor_icon.png'>
-	</div>
-	<div class="summary-col-mid">
-		<p class="summary-text"></p>
-	</div>
-	<div class="vertical-text-container-outer">
-		<div class="vertical-text-container">
-			<p class="vertical-text">Detect</p>
-		</div>
-	</div>
-</div>
-<div class="logo-spacer">
-	<img src='images/logo_line1.png'>
-</div>
+<% content_for :icon_src do %>
+  images/sensor_icon.png
+<% end %>
+
+<% content_for :vertical_text do %>
+  detect
+<% end %>
+
+<% content_for :abstract_goal do %>
+  In our quest to engineer fumarate-producing cyanobacterial cell factories we need a way to
+quickly and easily determine if a given genetically engineered construct is actually producing
+fumarate. For this purpose, we construct a biosensor, a strain of Escherichia Coli that is able
+to sense and report presence of fumarate in the extracellular medium.
+<% end %>
+
+
+

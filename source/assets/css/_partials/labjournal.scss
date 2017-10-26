@@ -34,7 +34,6 @@
 	text-align: justify;
 	font-size: 18px;
 	align-items: left;
-	font-family: avenir;
 	margin: 20px;
 }
 
@@ -58,7 +57,7 @@
 }
 
 .labj-icon-text {
-	text-align: center;
+	text-align: center !important;
 	font-size: 18px;
 	align-items: center;
 }
@@ -138,7 +137,7 @@
 	margin-top: 5px;
 	margin-bottom: 5px;
 	margin-left: 5%;
-	text-align: right;
+	text-align: right !important;
 	flex-direction: row;
 }
 
