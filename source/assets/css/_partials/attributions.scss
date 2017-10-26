@@ -8,6 +8,22 @@
 	min-height: 315px;
 }
 
+.attri-con-mid {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 80% !important;
+	vertical-align: middle;
+}
+
+.attri-con-left {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 10%;
+}
 
 /* Table Container */
 

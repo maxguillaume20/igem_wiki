@@ -23,6 +23,7 @@
     @import "_partials/collaboration";
     @import "_partials/protocol";
     @import "_partials/modules";
+    @import "_partials/achievements";
 
 
     color: #fff;
@@ -59,6 +60,7 @@
         min-height: 275px;
         align-items: stretch !important;
         background-color: $dark-background-color;
+        overflow: hidden;
     }
 
     /* Summary columns */

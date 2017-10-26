@@ -4,20 +4,24 @@
 
 /* Outreach Summary */
 
+.summary-container#outreach {
+	min-height: 310px;
+}
+
 .summary-col-left#outreach {
 	width: 10%;
 
 }
 
-.summary-col-mid#outreach {
+.summary-col-mid#outreach { 
 	width: 80%;
 }
 
 /* Outreach List */
 
-.outr-container-gray {
+.outr-container-light {
 	min-height: 275px;
-	background-color: rgba(50, 50, 50,1);
+	background-color: $light-background-color;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -37,8 +41,7 @@
 }
 
 .outr-title {
-	color: rgba(88, 190, 190, 1);
-	font-weight: bold;
+	color: $main-color;
 }
 
 .outr-text#list {
