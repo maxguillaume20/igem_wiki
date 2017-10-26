@@ -1,0 +1,33 @@
+/*
+* Achievements
+*/
+
+ul.checkmark {
+    list-style:none;
+}
+
+ul.checkmark li:before {
+    content:"\2713\0020";
+    font-family: 'Lucida Sans Unicode', 'Arial Unicode MS', Arial;
+}
+
+.summary-text#achie {
+	align-items: left !important;
+}
+
+.summary-col-mid#achie {
+	display: flex;
+	flex-direction: column;
+	align-items: left !important;
+	justify-content: center;
+}
+
+.summary-container#silver {
+	background-color: $light-background-color;
+	align-items: left;
+}
+
+.in-text-link#achie {
+        color: white;
+        font-size: inherit;
+    }
