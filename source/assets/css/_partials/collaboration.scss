@@ -1,6 +1,6 @@
 /*
 * Collaboration
-*/
+*/ 
 
 /* Summary Collaboration */
 
@@ -36,7 +36,7 @@
 	flex-direction: column;
 	align-items: left;
 	justify-content: center;
-	width: 85% !important;
+	width: 80% !important;
 	margin-bottom: 40px;
 }
 
@@ -51,6 +51,10 @@
 
 .collab-main-container#light {
 	background-color: $light-background-color;
+}
+
+.in-text-link#collabtext {
+	margin-left: 5px;
 }
 
 /* Dropdown menu */
