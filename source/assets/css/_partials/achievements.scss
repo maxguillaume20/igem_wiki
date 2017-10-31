@@ -15,13 +15,6 @@ ul.checkmark li:before {
 	align-items: left !important;
 }
 
-.summary-col-mid#achie {
-	display: flex;
-	flex-direction: column;
-	align-items: left !important;
-	justify-content: center;
-}
-
 .summary-container#silver {
 	background-color: $light-background-color;
 	align-items: left;
@@ -30,4 +23,5 @@ ul.checkmark li:before {
 .in-text-link#achie {
         color: white;
         font-size: inherit;
+        text-decoration: underline;
     }
