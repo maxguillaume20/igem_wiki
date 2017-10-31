@@ -6,12 +6,10 @@ title: Collaboration
 	    var x = document.getElementById(clicked_id+"extension");
 	    if (x.style.display === "none") {
 	        x.style.display = "flex";
-	        document.getElementById(clicked_id+"arrow").innerHTML = "&#9660;";
-	        document.getElementById(clicked_id+"text").innerHTML = "Click here to hide the full collaboration";
+	        document.getElementById(clicked_id+"text").innerHTML = "&#9660;&ensp; Click here to hide the full collaboration";
 	    } else {
 	        x.style.display = "none";
-	        document.getElementById(clicked_id+"arrow").innerHTML = "&#9654;";
-	        document.getElementById(clicked_id+"text").innerHTML = "Click here to display the full collaboration";
+	        document.getElementById(clicked_id+"text").innerHTML = "&#9654;&ensp; Click here to display the full collaboration";
 	    }
 	}
 </script>
@@ -37,8 +35,7 @@ title: Collaboration
 		<p class="collab-header">University of Nebraska-Lincoln</p>
 		<p class="collab-text">After the UNL iGEM sent around there iGEM survey, The Amsterdam team and the UNL iGEM team got into contact about combining their knowledge and explore the possibilities of a combined future application of their projects.  In this collaboration, the UNL iGEM team and the Amsterdam iGEM team joined forces to come up with a way to reduce methane emissions. Methane emissions have a huge impact on climate change. iGEM team UNL and iGEM team Amsterdam explored the possibilities of feeding fumarate to cattle, in order to reduce methane emissions. We can conclude that fumarate seems a promising molecule for this application. However, since the literature about the possible effect of fumarate is not consistent, the physiology of cattle opposes some challenges and the maximum fumarate yields in certain organisms under our specific conditions are not yet defined.  Actual empirical research must show if this promising route can lead to lower methane emissions and a more sustainable world!</p>
 		<div onclick="displayFunction(this.id)" id="collab" class="con-extension">
-			<div class="col-arr"><p id="collabarrow" class="in-text-link">&#9654;</p></div> 
-			<p class="in-text-link" id="collabtext">Click here to display the full collaboration</p>
+			<p class="in-text-link" id="collabtext">&#9654;&ensp; Click here to display the full collaboration</p>
 		</div>
 		<div id="collabextension" style="display:none;">
 			<div class="nlu-text-con">
@@ -90,11 +87,6 @@ title: Collaboration
 			</div>
 		</div>
 	</div>
-	<div class="vertical-text-container-outer">
-		<div class="vertical-text-container">
-			<p class='vertical-text'></p>
-		</div>
-	</div>
 </div>
 <div class="collab-main-container">
 	<div class="collab-main-left">
@@ -122,11 +114,6 @@ title: Collaboration
 		<p class="collab-header">Meet-up Leuven</p>
 		<p class="collab-text">A month before the Giant Jamboree the team from KU Leuven organized a practice jamboree. During this event we got to practice our presentation and received feedback from the other teams. There were also some very inspiring speakers, that talked about being a scientist and the industrialization of products. It was a very informative afternoon and we are very grateful that the Leuven team set up this meeting!</p>
 	</div>
-	<div class="vertical-text-container-outer">
-		<div class="vertical-text-container">
-			<p class='vertical-text'></p>
-		</div>
-	</div>
 </div>
 <div class="collab-main-container">
 	<div class="collab-main-left">
@@ -150,11 +137,6 @@ title: Collaboration
 			<li>University of Freiburg</li>
 			<li>Heidelberg University</li>
 		</ul>
-	</div>
-	<div class="vertical-text-container-outer">
-		<div class="vertical-text-container">
-			<p class='vertical-text'></p>
-		</div>
 	</div>
 </div>
 
