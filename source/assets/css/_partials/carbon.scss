@@ -1,0 +1,30 @@
+/*
+*	Carbon Efficiency
+*/
+
+.carbon-main-container {
+	min-height: 200px;
+	background-color: $light-background-color;
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	align-items: stretch !important;
+}
+
+.carbon-con-left {
+	width: 10%;
+}
+
+.carbon-con-mid {
+	width: 80%;
+}
+
+.carbon-table {
+	width: 50%;
+	margin-left: 25%;
+	margin-right: 25%;
+}
+
+.summary-text#table {
+	font-size: 14px;
+}
