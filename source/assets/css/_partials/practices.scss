@@ -1,0 +1,46 @@
+/*
+* Practices
+*/
+
+.main-pages-container {
+	min-height: 220px;
+	background-color: $light-background-color;
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	align-items: stretch !important;
+}
+
+.main-pages-container#dark {
+	background-color: $dark-background-color;
+}
+
+.main-pages-con-left {
+	width: 20%;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+.main-pages-con-mid {
+	width: 70%;
+	flex-direction: column;
+	display: flex;
+	position: relative;
+	align-items: stretch !important;
+}
+
+.main-pages-icon {
+	width: 40%;
+}
+
+.summary-text#prac-header {
+	font-size: 22px;
+	margin-bottom: 0px;
+	margin-top: 20px;
+}
+
+.summary-text#practice {
+	margin-bottom: 20px;
+}
+

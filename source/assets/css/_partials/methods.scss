@@ -1,0 +1,88 @@
+/*
+* Methods
+*/
+
+.meth-container {
+	position: relative;
+    justify-content: flex-start !important;
+    min-height: 275px;
+    align-items: stretch !important;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.meth-container#dark {
+	background-color: $dark-background-color;
+}
+
+.meth-con-left {
+	width: 10%;
+}
+
+.meth-con-mid {
+	width: 80%;
+	width: 80%;
+	flex-direction: column !important;
+	display: flex;
+}
+
+.meth-header {
+	font-size: 22px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.meth-header#large {
+	font-size: 28px;
+}
+
+.summary-text#header {
+	text-decoration: underline;
+	margin-bottom: 0px;
+}
+
+.summary-text#meth {
+	margin-top: 1px;
+}
+
+/* Images */
+
+.meth-images {
+	width: 70%;
+}
+
+.meth-images-caption {
+	width: 70%;
+	margin-left: 15%;
+	text-align: justify;
+	font-size: 15px;	
+}
+
+.image-cloning {
+	width: 40%;
+}
+
+.image-cloning-caption {
+	width: 40%;
+	margin-left: 30%;
+	text-align: justify;
+	font-size: 15px;
+}
+
+/* Methods Dropdown */
+
+.method-dropdown {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	align-items: stretch !important;
+}
+
+.meth-extension {
+	flex-direction: column;
+}
+
+
+
+
