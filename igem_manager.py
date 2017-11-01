@@ -87,6 +87,7 @@ class BaseIGemWikiManager(object):
         self._username = None
         self._password = None
         self._prefix = None
+        self._prefix_resources = None
         self._files = []
         self._session = requests.Session()
         self._token = None
@@ -130,6 +131,14 @@ class BaseIGemWikiManager(object):
     @prefix.setter
     def prefix(self, value):
         self._prefix = value
+
+    @property
+    def resource_prefix(self):
+        return self._prefix_resources
+
+    @resource_prefix.setter
+    def resource_prefix(self, value):
+        self._prefix_resources = value
 
     @property
     def token(self):
@@ -345,18 +354,16 @@ class BaseIGemWikiManager(object):
         # result = {'result': False}
         page = self.prefix_title(title)
         # get total file size
-        fs = os.path.getsize(path)
+        fs = os.path.getsize(path) if os.path.exists(path) else 0
         if fs < chunk_size:
             result = self._upload_file(page, path, comment=comment)
         else:
             result = self._upload_chunks(page, path, comment=comment, chunk_size=chunk_size)
         return result
 
-    def _upload_file(self, page, source, comment=None, prefix=None):
+    def _upload_file(self, page, source, comment=None):
         result = {'result': False}
         uri = page
-        if prefix is not None:
-            uri = "{}{}".format(prefix, uri)
         data = self.create_json(
             action="upload", filename=uri, comment=comment
         )
@@ -444,6 +451,13 @@ class BaseIGemWikiManager(object):
                 result['offset'] = upload.get("offset")
         return result
 
+    def read_file(self, fn):
+        result = None
+        if os.path.exists(fn):
+            with open(fn, "rb") as src:
+                result = "".join(src.readlines())
+        return result
+
     @classmethod
     def run(cls):
         parser = cls.create_parser()
@@ -521,6 +535,9 @@ class BaseIGemWikiManager(object):
         parser.add_argument(
             '--prefix', help="Prefix to add before each title"
         )
+        parser.add_argument(
+            '--resource-prefix', dest="resource_prefix", help="Add prefix to each resource file name"
+        )
         return parser
 
     def parse_arguments(self, arguments):
@@ -541,6 +558,9 @@ class BaseIGemWikiManager(object):
         prefix = arguments.get("prefix")
         if prefix is not None:
             self.prefix = prefix
+        resource_prefix = arguments.get("resource_prefix")
+        if resource_prefix is not None:
+            self.resource_prefix = resource_prefix
         files = arguments.get("files")
         if not isinstance(files, (tuple, list)):
             files = [files]
