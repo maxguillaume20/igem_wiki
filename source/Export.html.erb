@@ -56,7 +56,8 @@ layout: layouts/module_layout
 	<div id="last" class="module-collapsible-container-outer">
 	<p id="last" onclick="displayCollapsible(this.id)" class="in-text-link">&#9654;&ensp; Supplementary Material</p>
 	<div id="last" class="module-collapsible-container-inner" style="display:none;">
-	<% data.modules.exportation.supplementary.each do |supp| %>
-	  <%= supp %>
-  <% end %>
+		<% data.modules.exportation.supplementary.each do |supp| %>
+		  <%= supp %>
+	  <% end %>
+	</div>  
 <% end %>
