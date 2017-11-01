@@ -37,6 +37,10 @@
 	font-size: 24px;
 }
 
+.project-header {
+	align-self: left;
+}
+
 #fig41 > img, #fig41 > figcaption {
 	width: 100%;
 	max-width: 700px;
@@ -52,4 +56,12 @@
 	max-width: 700px;
 }
 
+#fig44 > img {
+	width: 40%;
+	max-width: 700px;
+} 
 
+#fig44 > figcaption {
+	width: 40%;
+	margin-left: 30%;
+}
