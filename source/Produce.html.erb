@@ -7,10 +7,47 @@ layout: layouts/module_layout
   images/shunt_icon.png
 <% end %>
 
-<% content_for :abstract_goal do %>
- 
+<% content_for :vertical_text do %>
+  Produce
 <% end %>
 
-<% content_for :vertical_text do %>
-  produce
+<% content_for :goal do %>
+  <%= data.modules.production.goal %>
+<% end %>
+
+<% content_for :overview do %>
+  <%= data.modules.production.overview %>
+<% end %>
+
+
+<% content_for :highlights do %>
+  <ul class="highlights-list">
+  	<% data.modules.production.highlights.each do |highlight| %>
+  		<li><%=highlight%></li>
+  	<% end %>
+  </ul>
+<% end %>
+
+<% content_for :collapsibles do %>
+	<% data.modules.production.collapsibles.each do |collapsible| %>
+	  <div id="<%=collapsible.id-%>" class="module-collapsible-container-outer">
+	  	<p id="<%=collapsible.id-%>" onclick="displayCollapsible(this.id)" class="in-text-link">&#9654;&ensp; <%=collapsible.title%></p>
+	  	<div id="<%=collapsible.id-%>" class="module-collapsible-container-inner" style="display:none;">
+	  		<% collapsible.sections.each do |section| %>
+	  			<p id="<%=section.id%>" class="collapsible-main-header"><%=section.title%></p>
+		  		<% section.contents.each do |content| %>
+		  			<%= content %>
+		  		<% end %>
+	  		<% end %>
+	  	</div>
+	  </div>
+  <% end %>
+<% end %>
+
+<% content_for :references do %>
+	<ol class="references-list">
+	  	<% data.modules.production.references.each do |reference|%>
+	  		<li><%=reference%></li>
+	  	<% end %>
+  	</ol>
 <% end %>

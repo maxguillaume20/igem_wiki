@@ -167,4 +167,13 @@
     .text-highlight {
         color: $main-color;
     }
+
+    figure {
+        display: table;
+        margin: 50px auto;
+    }
+
+    figcaption {
+        text-align: justify !important;
+    }
 }

@@ -12,6 +12,10 @@
 	text-align: left;
 }
 
+.references-list {
+	text-align: left;
+}
+
 .module-visible-container {
 	width: 100%;
 	align-items: left;
@@ -20,6 +24,32 @@
 
 .module-collapsible-container-outer {
 	width: 100%;
+}
+
+.module-collapsible-container-inner {
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.collapsible-main-header {
+	align-self: left;
+	font-size: 24px;
+}
+
+#fig41 > img, #fig41 > figcaption {
+	width: 100%;
+	max-width: 700px;
+}
+
+#fig42 > img, #fig42 > figcaption {
+	width: 100%;
+	max-width: 700px;
+}
+
+#fig43 > img, #fig43 > figcaption {
+	width: 100%;
+	max-width: 700px;
 }
 
 

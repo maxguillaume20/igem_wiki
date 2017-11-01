@@ -1,9 +1,139 @@
 {
-  "detection": {
-    "highlights": [
+  "detection": 
+  {
+    "goal": "From <a class='in-text-link' href='/Gold_Integrated.html'>conversations with Photanol</a> we know that, in our quest to engineer fumarate-producing cyanobacterial factories, we need a way to quickly and easily determine if a given genetically engineered construct is actually producing fumarate. For this purpose, we constructed a biosensor, i.e. an <i>Escherichia Coli</i> strain that is able to sense and quantitatively report the presence of fumarate in the extracellular medium. ",
+    "overview": "Our fumarate biosensor is based on a well-characterized chimeric two-component system. When integrated in <i>E. coli</i>, this system has been reported to make the cells fluoresce when fumarate is in the environment. We constructed and investigated the functionality of different variants of this system in <i>E. coli</i>. This way we created several variants of our necessary fumarate biosensor, while deepening our fundamental understanding of chimeric two-component systems at the same time!",
+    "highlights": 
+    [
       "Engineered at least 3 functional biosensors with a combined signal dynamic range of 0.1-20 mM fumarate.",
       "Investigated the effect of linker length and kinase orientation on biosensor functionality.",
       "Demonstrated real world applicability."
+    ],
+    "references":
+    [
+      "Hazelbauer, G. L., & Lai, W. C. (2010). Bacterial chemoreceptors: providing enhanced features to two-component signaling. <i>Current opinion in microbiology</i>, 13(2), 124-132.",
+      "Stock, A. M., Robinson, V. L., & Goudreau, P. N. (2000). Two-component signal transduction. <i>Annual review of biochemistry</i>, 69(1), 183-215.",
+      "Ganesh, I., Ravikumar, S., Lee, S. H., Park, S. J., & Hong, S. H. (2013). Engineered fumarate sensing Escherichia coli based on novel chimeric two-component system. <i>Journal of biotechnology</i>, 168(4), 560-566.",
+      "Görke, B., & Stülke, J. (2008). Carbon catabolite repression in bacteria: many ways to make the most out of nutrients. <i>Nature Reviews Microbiology</i>, 6(8), 613-624.",
+      "Bi, S., Pollard, A. M., Yang, Y., Jin, F., & Sourjik, V. (2016). Engineering hybrid chemotaxis receptors in bacteria. <i>ACS synthetic biology</i>, 5(9), 989-1001.",
+      "Immethun, C. M., DeLorenzo, D. M., Focht, C. M., Gupta, D., Johnson, C. B., & Moon, T. S. (2017). Physical, chemical, and metabolic state sensors expand the synthetic biology toolbox for Synechocystis sp. PCC 6803. <i>Biotechnology and Bioengineering</i>.",
+      "Batchelor, E., Silhavy, T. J., & Goulian, M. (2004). Continuous control in bacterial regulatory circuits. <i>Journal of bacteriology</i>, 186(22), 7618-7625.",
+      "Bachmann, H., Fischlechner, M., Rabbers, I., Barfa, N., dos Santos, F. B., Molenaar, D., & Teusink, B. (2013). Availability of public goods shapes the evolution of competing metabolic strategies.<i>Proceedings of the National Academy of Sciences</i>, 110(35), 14302-14307."
+    ],
+    "collapsibles": 
+    [
+      {
+        "id": "first",
+        "title": "Constructing a family of biosensors",
+        "sections": 
+        [
+          {
+            "id": "intro1",
+            "title": "Introduction",
+            "contents":
+            [
+              "<p>Currently fumarate concentrations in liquid samples can be quantified through two well-developed methods, high-performance liquid chromatography (HPLC) and enzymatic assays. Both methods are costly and labor intensive. In our search for cyanobacterial cell-factories we need to measure fumarate concentrations very often. Measurements need to be accurate and specific to fumarate, and on top of that measuring should be quick and easy. Fortunately, synthetic biology may be used to derive a solution to this inspired in nature.</p>",
+              "<p>Bacteria have evolved to use two-component systems (TCS) to sense and adapt to changes in the extracellular environment. These systems are often highly specific to particular compounds and accurate in their measurement [1]. A TCS typically consists of a sensor histidine kinase (SHK) and a response regulator. The first sits in the membrane and gets activated upon sensing particular signals such as a specific compound The second gets activated by an active SHK and can then bind to DNA at specific loci to initiate a biological response [2]. We construct a fumarate biosensor based on the DcuSZ/OmpR chimeric TCS developed in <i>E. coli</i> by Ganesh et al. (2013) [3]. The SHK in this system, DcuSZ, is a fusion of two native <i>E. coli</i> SHKs, fumarate sensor DcuS and osmolarity sensor EnvZ. The protein domains in DcuSZ are the extracellular sensing domain and transmembrane domains of DcuS and the intracellular HAMP and histidine kinase domains of EnvZ. Coupling the emerging TCS to the expression of a fluorescent reporter protein leads to cells that fluoresce in response to extracellular fumarate (fig. 4.1).</p>",
+              "<figure id=fig41><img src=images/figures/Biosensor1_4.1.png class=module-figure-image><figcaption class=module-figure-text><b>Figure 4.1</b> <i>The DcuS fumarate sensing, transmembrane and HAMP domains were fused to the EnvZ kinase leading to the chimeric DcuSZ/OmpR two-component system. Coupling this to fluorescent protein (EYFP) expression by using the ompC promoter leads to sensing and reporting of fumarate.</i></figcaption></figure>",
+              "<p>We have created several differently fused DcuSZ genes to compare their functionality. The difference is in the length of the linker region between the DcuS and EnvZ functional domains. The linker region originates from the DcuS gene and forms an α-helix. A complete turn in an α-helix consists of approximately 3.6 amino acids, so by differing the linker length in steps of 5 amino acids we extend or shorten the α-helix by ~1.4 turns per step taken. This results in a titration of the different orientations of the EnvZ kinase relative to the membrane bound DcuS domains, and thus relative to the membrane. We expect the linker length and kinase orientation play a central role in the functionality of the system. By creating 9 DcuSZ genes with different lengths (fig. 4.2), at least one of them, and at best two, are predicted to be close to the optimal orientation. By taking more than one turn per step we also scan a relatively large range of distance between the DcuS and EnvZ functional domains. This may influence the kinetics of binding and activation of the engineered TCS, possibly leading to variants with different detection limits and signal dynamic ranges for fumarate. For detailed descriptions on strain cultivation, plasmid construction, testing conditions and data analysis see the <a class=in-text-link href='/Detect.html#method1'>methods section.</a></p>",
+              "<figure id=fig42><img src=images/figures/Biosensor2_4.2.png class=module-figure-image><figcaption class=module-figure-text><b>Figure 4.2</b> <i>The 9 DcuSZ variants, the first 1020 basepairs of DcuS remain the same and so do the 690 EnvZ basepairs. Linkers are extended or shortened at the merge between DcuS and EnvZ. Orientations of the EnvZ kinase domains are shown relative to the orientation in DcuSZ 1, which is the gene as it was constructed by Ganesh et al. (2013) [3].</i></figcaption></figure>"
+            ]
+          },
+          {
+            "id": "results1",
+            "title": "Results & Disscusion",
+            "contents":
+            [
+              "<p>Strains 1-9, containing corresponding DcuSZ 1-9 signaling systems, were screened for their functionality within a range of 0-10 mM of fumarate (supplementary fig. S4.1). This screening suggested that strains 1, 6 and to some extent 9 are functioning as biosensors. The screening also showed that the response in fluorescence/OD<sub>600</sub> is robust over time. Times of measurement were quite high, namely 16 and 22 hours, because the signalling system was only induced by adding anhydrotetracycline (aTc) upon addition of fumarate. Ideally the system would be induced before adding fumarate, as in our case there is more time in which the strains can take up the fumarate. However, fumarate uptake is repressed by the presence of glucose in the medium [4].</p>",
+              "<p>A more thorough characterization of strains 1, 6 and 9 was performed, with a range of 0-20 mM of fumarate. By fitting a logistic curve to the data the detection limits and saturation levels of each sensing strain can be determined. Several nice examples of the logistic nature of similar sensing systems are shown by Pollard et al. (2016) [5]. By varying the linker length, and with that the kinase orientation, we expect to have changed the effectiveness of signal transduction in the chimeric DcuSZ protein. While intuitively one might expect only the range of signal detection to differ as a consequence, in reality the dynamics of the fluorescence output vary widely (fig. 4.3).</p>",
+              "<figure id=fig43><img src=images/figures/Biosensor3_4.3.png class=module-figure-image><figcaption class=module-figure-text><b>Figure 4.3</b> <i>Fluorescence/OD<sub>600</sub> in strains 1, 6 and 9 for a titration of 0-20 mM fumarate. Wild type and strain specific background fluorescence were subtracted from the data as described in the <a class='in-text-link' href='/Detect.html#method1'>methods section</a>. The fitted curve is a Gompertz function (\\(y = a e ^{-b e^{-c x}}\\)).</i></figcaption></figure>",
+              "<p>Strains 1, 6 and 9 are all functional (fig. 4.3), with relative kinase orientations of 0<sup>o</sup>, 140<sup>o</sup> and 200<sup>o</sup> respectively. DcuSZ 1 and 6 do have similar lengths, but DcuSZ 9 is 15-20 amino acids longer than DcuSZ 1 and 6, and yet strain 9 is also functional. The characterization suggests that strain 1 can be used to quantify fumarate concentrations up to 3 mM, strain 6 up to 6 mM and strain 9 even up to 20 mM (fig. 4.3). To quantify fumarate concentrations below 1 mM, calibration in the 0-1 mM range should be performed. While strain 9 can measure up to the highest fumarate concentration, it is less sensitive than strains 1 and 6. The logistic fit is the best for strain 6 and therefore its curve is the most trustworthy. The spread in the fluorescence/OD<sub>600</sub> of strain 1 is high, which leads to more uncertainty as to the level of saturation of this biosensor. The specificity to fumarate of these systems should be tested by comparing the response found here to the response to other C4-dicarboxylates (succinate, malate and aspartate). Previous work shows that the DcuSZ/OmpR system with the kinase orientation and linker length as they are in strain 1 is highly specific to fumarate [3].</p>"
+            ]
+          },
+          {
+            "id": "conc1",
+            "title": "Conclusion",
+            "contents":
+            [
+              "<p>Based on our results, we are unable to identify a general trend in functionality caused by the linker length and kinase orientation. However, the results do show a large difference in fluorescence response as a consequence of DcuSZ linker length and kinase orientation. In general we can conclude that varying the linker length and kinase orientation in the chimeric DcuSZ/OmpR TCS has a complex and often detrimental effect on its functionality. In light of our project specifically, we can conclude that we have successfully created a family of biosensors capable of quantifying its concentration from (at least) 1 up to 20 mM with different dynamic ranges.</p>"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "production": 
+  {
+    "goal": "",
+    "overview": "",
+    "highlights": 
+    [
+      "",
+      "",
+      ""
+    ],
+    "references":
+    [
+      "",
+      "",
+      ""
+    ],
+    "collapsibles": 
+    [
+      {
+        "id": "",
+        "title": "",
+        "sections": 
+        [
+          {
+            "id": "",
+            "title": "",
+            "contents":
+            [
+              "",
+              "",
+              ""
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "exportation": 
+  {
+    "goal": "",
+    "overview": "",
+    "highlights": 
+    [
+      "",
+      "",
+      ""
+    ],
+    "references":
+    [
+      "",
+      "",
+      ""
+    ],
+    "collapsibles": 
+    [
+      {
+        "id": "",
+        "title": "",
+        "sections": 
+        [
+          {
+            "id": "",
+            "title": "",
+            "contents":
+            [
+              "",
+              "",
+              ""
+            ]
+          }
+        ]
+      }
     ]
   }
 }
