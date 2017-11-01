@@ -11,12 +11,37 @@ layout: layouts/module_layout
   detect
 <% end %>
 
-<% content_for :abstract_goal do %>
-  In our quest to engineer fumarate-producing cyanobacterial cell factories we need a way to
-quickly and easily determine if a given genetically engineered construct is actually producing
-fumarate. For this purpose, we construct a biosensor, a strain of Escherichia Coli that is able
-to sense and report presence of fumarate in the extracellular medium.
+<% content_for :goal do %>
+  From <a class="in-text-link" href="/Gold_Integrated.html">conversations with Photanol</a> we know that, in our quest to engineer fumarate-producing cyanobacterial factories, we need a way to quickly and easily determine if a given genetically engineered construct is actually producing fumarate. For this purpose, we constructed a biosensor, i.e. an <i>Escherichia Coli</i> strain that is able to sense and quantitatively report the presence of fumarate in the extracellular medium. 
 <% end %>
+
+<% content_for :overview do %>
+  Our fumarate biosensor is based on a well-characterized chimeric two-component system. When integrated in <i>E. coli</i>, this system has been reported to make the cells fluoresce when fumarate is in the environment. We constructed and investigated the functionality of different variants of this system in <i>E. coli</i>. This way we created several variants of our necessary fumarate biosensor, while deepening our fundamental understanding of chimeric two-component systems at the same time!
+<% end %>
+
+
+<% content_for :highlights do %>
+  <ul class="highlights-list">
+  	<% data.modules.detection.highlights.each do |highlight| %>
+  		<li><%=highlight%></li>
+  	<% end %>
+  </ul>
+<% end %>
+
+<% content_for :collapsibles do %>
+  <div id="first" class="module-collapsible-container-outer" onclick="displayCollapsible(this.id)">
+  	<p class="in-text-link" id="">&#9654;&ensp; Click here to display the full collaboration</p>
+  	<div id="first" class="module-collapsible-container-inner" style="display:none;">
+  		<p>Our fumarate biosensor is based on a well-characterized chimeric two-component system. When integrated in <i>E. coli</i>, this system has been reported to make the cells fluoresce when fumarate is in the environment. We constructed and investigated the functionality of different variants of this system in <i>E. coli</i>. This way we created several variants of our necessary fumarate biosensor, while deepening our fundamental understanding of chimeric two-component systems at the same time!</p>
+  	</div>
+  </div>
+<% end %>
+
+
+
+
+
+
 
 
 

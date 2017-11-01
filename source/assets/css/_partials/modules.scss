@@ -1,11 +1,25 @@
 .module-outer-container {
-	width: 100%;
+	padding: 0 15%;
+	width: 70%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
 
-.module-section-container {
-	width: 70%;
+.highlights-list {
+	list-style-type: square;
+	text-align: left;
 }
+
+.module-visible-container {
+	width: 100%;
+	align-items: left;
+	justify-content: left;
+}
+
+.module-collapsible-container-outer {
+	width: 100%;
+}
+
+

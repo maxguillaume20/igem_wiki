@@ -6,14 +6,7 @@
 		</div>
 		<div class="summary-col-mid">
 			<p class="summary-text">
-				Goal<br>
-				<%= yield_content :abstract_goal %><br>
-				<br>
-				Results<br>
-				<%= yield_content :abstract_results %><br>
-				<br>
-				Conclusions<br>
-				<%= yield_content :abstract_conclusions %>
+				<%= yield_content :goal %><br>
 			</p>
 		</div>
 		<div class="vertical-text-container-outer">
@@ -23,21 +16,29 @@
 		</div>
 	</div>
 	<div class="module-outer-container">
-		<div class="module-section-container">
-			<h1>Introduction</h1>
-			<p><%= yield_content :introduction %></p>
+		<div class="module-visible-container">
+			<h1>Overview</h1>
+			<p><%= yield_content :overview %></p>
 		</div>
-		<div class="module-section-container">
-			<h1>Results & Discussion</h1>
-			<p><%= yield_content :results %></p>
+		<div class="module-visible-container">
+			<h1>Highlights</h1>
+			<%= yield_content :highlights %>
 		</div>
-		<div class="module-section-container">
-			<h1>Conclusion</h1>
-			<p><%= yield_content :conclusion %></p>
-		</div>
-		<div class="module-section-container">
-			<h1>Methods</h1>
-			<p><%= yield_content :methods %></p>
-		</div>
+		<%= yield_content :collapsibles %>
 	</div>
+
+
+	<script>
+		function displayCollapsible(clicked_id) {
+		    var x = document.querySelector("#"+clicked_id+".module-collapsible-container-inner");
+		    if (x.style.display === "none") {
+		        x.style.display = "flex";
+		        
+		    } else {
+		        x.style.display = "none";
+		        
+		    }
+
+		}
+	</script>
 <% end %>
