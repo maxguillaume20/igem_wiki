@@ -1,4 +1,4 @@
-/*
+/* 
 * Human Practices Gold Integrated
 */
 
@@ -99,11 +99,13 @@
 
 .summary-text#gold {
 	margin: 10px;
+	text-align: left !important;
 }
 
 .content-text {
 	align-items: center !important;
 	margin: 10px;
+	text-align: left !important;
 }
 
 .gold-header {
@@ -133,7 +135,7 @@
 	text-align: center !important;
 }
 
-.in-text-link {
+.in-text-link#gold {
 	margin-left: 10px;
 	margin-top: 0px;
 	margin-bottom: 20px;
