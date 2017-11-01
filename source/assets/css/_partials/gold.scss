@@ -103,6 +103,7 @@
 
 .content-text {
 	align-items: center !important;
+	margin: 10px;
 }
 
 .gold-header {
@@ -116,11 +117,16 @@
 	margin-bottom: 0px;
 	margin-left: 10px;
 	margin-right: 10px;
+	text-align: center !important;
 }
 
 .summary-text#goldmain {
 	margin-top: 0px;
 	margin-left: 10px;
+}
+
+.summary-text#boxunder {
+	text-align: center !important;
 }
 
 .summary-text#box {

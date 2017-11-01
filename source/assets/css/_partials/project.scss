@@ -25,6 +25,10 @@ $cellfactory-img-height: 600px;
 	padding: 0 10% 25px 10%;
 }
 
+.project-text-container#dark {
+	background-color: $dark-background-color;
+}
+
 .project-text-container > h1, .project-text-container > p {
 	text-align: left;
 }
@@ -34,7 +38,7 @@ $cellfactory-img-height: 600px;
 }
 
 .info-oval-container#project {
-	padding-bottom: 25px;
+	padding-top: 25px;
 }
 
 .modules-summary-container-outer {
@@ -65,3 +69,16 @@ $cellfactory-img-height: 600px;
 .modules-summary-text > h1 {
 	text-align: center !important;
 }
+
+.project-header {
+	margin-bottom: 0px;
+}
+
+.project-list {
+	text-align: left;
+}
+
+.project-text-margin {
+	margin-top: 10px;
+}
+
