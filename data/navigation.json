@@ -7,12 +7,12 @@
     },
     {
       "title": "Practices",
-      "url": "#",
+      "url": "Practices.html",
       "logo": "images/sections/practices.png"
     },
     {
       "title": "Lab",
-      "url": "#",
+      "url": "Lab.html",
       "logo": "images/sections/lab.png"
     },
     {
@@ -22,7 +22,7 @@
     },
     {
       "title": "Achievements",
-      "url": "#",
+      "url": "/Achievements.html",
       "logo": "images/sections/achievements.png"
     }
   ]

@@ -30,6 +30,7 @@
     @import "_partials/methods";
     @import "_partials/gold";
     @import "_partials/carbon";
+    @import "_partials/parts";
 
 
     color: #fff;
@@ -156,6 +157,7 @@
         color:$main-color;
         font-size: inherit;
         text-decoration: underline;
+        margin-left: 0px;
     }
 
     .in-text-link:hover {
