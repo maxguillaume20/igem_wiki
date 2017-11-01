@@ -137,6 +137,14 @@
           }
         ]
       }
+    ],
+    "supplementary":
+    [
+      "<figure id=figS41><img src=images/figures/Biosensor5_Sfig4.1.png class=module-figure-image><figcaption class=module-figure-text><b>Figure S4.1</b> <i>Screening of constructed strains, the y-axis shows Fluorescence/OD<sub>600</sub>, the background Fluorescence/OD<sub>600</sub> has been subtracted as described in the <a class='in-text-link' href='/Detect.html#method1'>methods section</a>. The x-axis shows fumarate concentration with a range of 0mM to 10mM. Each strain is depicted in a separate plot and two measured time points are shown, 16h (o) and 22h (Δ).</i></figcaption></figure>",
+      "<figure id=figS42><img src=images/figures/Biosensor6_Sfig4.2.png class=module-figure-image><figcaption class=module-figure-text><b>Figure S4.2</b> <i>pCI-dcuSZ plasmid construction</i></figcaption></figure>",
+      "<figure id=tabS41><img src=images/figures/Biosensor7_Stab4.1.png class=module-figure-image><figcaption class=module-figure-text><b>Table S4.1</b> <i>Primers, Nucleotides in red are not on the template.</i><br>* Tm for the first pcr reaction (first part is not annealed), Tm for second reaction is 60,0 ºC <br>** Hetero-dimer of For_dcuS with Rev_envZ</figcaption></figure>",
+      "<figure id=tabS42><img src=images/figures/Biosensor8_Stab4.2.png class=module-figure-image><figcaption class=module-figure-text><b>Table S4.2</b> <i>DcuSZ 1-9 sequences of linker region, sequence confirmed by Macrogen Europe (the Netherlands)</i></figcaption></figure>",
+      "<figure id=figS43><img src=images/figures/Biosensor9_Sfig4.3.png class=module-figure-image><figcaption class=module-figure-text><b>Figure S4.3</b> <i>Approach for DcuSZ/OmpR integration in the Synechocystis genome</i></figcaption></figure>"
     ]
   },
   "production": 
@@ -174,6 +182,10 @@
           }
         ]
       }
+    ],
+    "supplementary":
+    [
+      ""
     ]
   },
   "exportation": 
@@ -211,6 +223,10 @@
           }
         ]
       }
+    ],
+    "supplementary":
+    [
+      ""
     ]
   }
 }
