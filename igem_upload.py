@@ -24,8 +24,9 @@ class IGemFile(object):
     def __init__(self, path, destination=None, prefix=None, mime=None, base=None, **kwargs):
         self._path = path
         self._destination = destination
+        # prefix to add to url
         self._prefix = prefix
-        #
+        # path to remove from full path
         self._base = base
         self._url = None
         self._mime = mime
@@ -122,6 +123,10 @@ class IGemUploader(BaseIGemWikiManager):
         self._files_uploaded = {}
         self._strip_prefix = None
         self._library = None
+        self._skip_resources = False
+        self._skip_javascripts = False
+        self._skip_stylesheets = False
+        self._skip_html = False
 
     @property
     def collected_files(self):
@@ -221,24 +226,28 @@ class IGemUploader(BaseIGemWikiManager):
     def upload_files(self):
         results = 0
         # first we upload resources so we can update their destinations
-        resources = filter(lambda f: f.is_resource(), self.collected_files.values())
-        print("## Uploading {} resources".format(len(resources)))
-        for resource in resources:
-            results += 1 if self.upload_resource(resource) else 0
+        if not self._skip_resources:
+            resources = filter(lambda f: f.is_resource(), self.collected_files.values())
+            print("## Uploading {} resources".format(len(resources)))
+            for resource in resources:
+                results += 1 if self.upload_resource(resource) else 0
         # upload all stylesheets
-        resources = filter(lambda f: f.is_stylesheet(), self.collected_files.values())
-        print("## Uploading {} stylesheets".format(len(resources)))
-        for resource in resources:
-            results += 1 if self.upload_stylesheet(resource) else 0
-        resources = filter(lambda f: f.is_javascript(), self.collected_files.values())
-        print("## Uploading {} javascripts".format(len(resources)))
-        for resource in resources:
-            results += 1 if self.upload_javascript(resource) else 0
-        # upload all html
-        resources = filter(lambda f: f.is_html(), self.collected_files.values())
-        print("## Uploading {} html files".format(len(resources)))
-        for resource in resources:
-            results += 1 if self.upload_html(resource) else 0
+        if not self._skip_stylesheets:
+            resources = filter(lambda f: f.is_stylesheet(), self.collected_files.values())
+            print("## Uploading {} stylesheets".format(len(resources)))
+            for resource in resources:
+                results += 1 if self.upload_stylesheet(resource) else 0
+        if not self._skip_javascripts:
+            resources = filter(lambda f: f.is_javascript(), self.collected_files.values())
+            print("## Uploading {} javascripts".format(len(resources)))
+            for resource in resources:
+                results += 1 if self.upload_javascript(resource) else 0
+        if not self._skip_html:
+            # upload all html
+            resources = filter(lambda f: f.is_html(), self.collected_files.values())
+            print("## Uploading {} html files".format(len(resources)))
+            for resource in resources:
+                results += 1 if self.upload_html(resource) else 0
         return results
 
     def upload_file(self, f, content=None):
@@ -410,8 +419,10 @@ class IGemUploader(BaseIGemWikiManager):
 
     def fix_stylesheet_link(self, href):
         match = self.find_actual_link(href)
-        if match is not None:
+        if isinstance(match, IGemFile):
             uri = match.url
+        elif isinstance(match, str):
+            uri = match
         else:
             uri = href.rsplit(".", 1)[0]
             uri = self.prefix_url(uri)
@@ -435,6 +446,8 @@ class IGemUploader(BaseIGemWikiManager):
             match = self.find_actual_link(src)
             if isinstance(match, IGemFile):
                 url = match.url
+            elif isinstance(match, str):
+                url = match
             else:
                 url = src.rsplit(".", 1)[0]
                 url = self.prefix_url(url)
@@ -462,6 +475,8 @@ class IGemUploader(BaseIGemWikiManager):
                 url = match.url
                 if url is None:
                     url = self.prefix_url(match.destination)
+            elif isinstance(match, str):
+                url = match
             if mime is None:
                 mime = os.path.splitext(url)[1]
             if isinstance(mime, str):
@@ -507,54 +522,37 @@ class IGemUploader(BaseIGemWikiManager):
 
         This can be a link or an source but will always return the actual destination
         """
-        result = self.match_to_urls(fn)
-        if result is None:
-            result = self.match_to_files(fn)
-        return result
+        return self.match_to_uploaded(fn)
 
-    def match_to_urls(self, fn):
+    def match_to_uploaded(self, fn):
         result = None
         fn = fn.lower()
 
-        def is_url_match(f):
-            result = False
-            if isinstance(f, str):
+        def is_match(item):
+            r = False
+            k, v = item
+            if not r and isinstance(k, str):
                 url = self.prefix_title(fn)
-                result = fn.strip("./") == f.strip("./") or url.strip("./") == f.strip("./")
-            return result
-
-        matches = filter(is_url_match, self.uploaded_files.keys())
-        if len(matches) > 0:
-            self.get_logger().debug("Matched {} to:\n{}".format(fn, [str(m) for m in matches]))
-            match = matches[0]
-            result = match
-        return result
-
-    def match_to_files(self, fn):
-        result = None
-        fn = fn.lower()
-
-        def is_match(f):
-            matches = False
-            if isinstance(f, IGemFile):
-                matches_names = fn.strip("./") in (f.destination, f.path, f.full_path, f.url)
+                r = fn.strip("./") == k.strip("./") or url.strip("./") == k.strip("./")
+            if not r and isinstance(v, IGemFile):
+                matches_names = fn.strip("./") in (v.destination, v.path, v.full_path, v.url)
                 matches_paths = False
                 try:
                     matches_paths = fn.strip("./") in (
-                            f.destination.strip("./"), f.path.strip("./"), f.full_path.strip("./"), f.url.strip("./")
+                        v.destination.strip("./"), v.path.strip("./"), v.full_path.strip("./"), v.url.strip("./")
                     )
                 except AttributeError:
                     pass
-                matches = matches_names or matches_paths
-            if isinstance(f, str):
-                matches = fn.strip("./") == f.strip("./")
-            return matches
+                r = matches_names or matches_paths
+            if not r and isinstance(v, str):
+                r = fn.strip("./") == v.lower().strip("./")
+            return r
 
-        matches = filter(is_match, self.uploaded_files.values())
+        matches = filter(is_match, self.uploaded_files.items())
         if len(matches) > 0:
             self.get_logger().debug("Matched {} to:\n{}".format(fn, [str(m) for m in matches]))
             match = matches[0]
-            result = match
+            result = match[0]
         return result
 
     def read_library(self, fp):
@@ -562,7 +560,7 @@ class IGemUploader(BaseIGemWikiManager):
         if os.path.exists(fp):
             with open(fp, "rb") as src:
                 for line in src.readlines():
-                    k, v = line.split("\t")
+                    k, v = line.strip("\n").split("\t")
                     if None not in (k, v) and "" not in (k, v):
                         results[k] = v
         self.get_logger().info("Read Uploaded Files Libary from {}, found {} files".format(
@@ -596,6 +594,22 @@ class IGemUploader(BaseIGemWikiManager):
         parser.add_argument(
             '--library', '-L', dest="library", help="Location of the library file to record file locations"
         )
+        parser.add_argument(
+            '--skip-resources', action="store_true", dest="skip_resources",
+            help="Do not upload resources (requires library with URL mappings to get fix_html to work)"
+        )
+        parser.add_argument(
+            '--skip-stylesheets', action="store_true", dest="skip_stylesheets",
+            help="Do not upload CSS Stylesheets (requires library with URL mappings to get fix_html to work)"
+        )
+        parser.add_argument(
+            '--skip-javascripts', action="store_true", dest="skip_javascripts",
+            help="Do not upload JavaScript files (requires library with URL mappings to get fix_html to work)"
+        )
+        parser.add_argument(
+            '--skip-html', action="store_true", dest="skip_html",
+            help="Do not upload HTML Files"
+        )
         return parser
 
     def parse_arguments(self, arguments):
@@ -606,6 +620,18 @@ class IGemUploader(BaseIGemWikiManager):
         library = arguments.get("library")
         if library is not None:
             self.library = library
+        skip_resources = arguments.get("skip_resources")
+        if skip_resources is not None:
+            self._skip_resources = skip_resources is True
+        skip_stylesheets = arguments.get("skip_stylesheets")
+        if skip_stylesheets is not None:
+            self._skip_stylesheets = skip_stylesheets is True
+        skip_javascripts = arguments.get("skip_javascripts")
+        if skip_javascripts is not None:
+            self._skip_javascripts = skip_javascripts is True
+        skip_html = arguments.get("skip_html")
+        if skip_html is not None:
+            self._skip_html = skip_html is True
 
 
 if __name__ == "__main__":
