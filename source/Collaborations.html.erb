@@ -1,18 +1,7 @@
 ---
-title: Collaboration 
+title: Collaboration  
 ---
-<script>
-	function displayFunction(clicked_id) {
-	    var x = document.getElementById(clicked_id+"extension");
-	    if (x.style.display === "none") {
-	        x.style.display = "flex";
-	        document.getElementById(clicked_id+"text").innerHTML = "&#9660;&ensp; Click here to hide the full collaboration";
-	    } else {
-	        x.style.display = "none";
-	        document.getElementById(clicked_id+"text").innerHTML = "&#9654;&ensp; Click here to display the full collaboration";
-	    }
-	}
-</script>
+
 
 <div class="summary-container" id="collaborations">
 	<div class="summary-col-left">
@@ -113,6 +102,25 @@ title: Collaboration
 		<p class="collab-text">The iGEM team from the TUDelft hosted a European iGEM meet-up, in which we participated. During this conference three speakers talked about synthetic biology in their field of work. After that every team presented their posters to all the other teams. We enjoyed the day and learned a lot of the poster presentation, therefore we want to thank the TUDelft iGEM team!</p>
 		<p class="collab-header">Meet-up Leuven</p>
 		<p class="collab-text">A month before the Giant Jamboree the team from KU Leuven organized a practice jamboree. During this event we got to practice our presentation and received feedback from the other teams. There were also some very inspiring speakers, that talked about being a scientist and the industrialization of products. It was a very informative afternoon and we are very grateful that the Leuven team set up this meeting!</p>
+		<div class="slideshow-silver">
+			<div class="image-slideshow">
+				<img src="images/collaborations/collab2.jpg" class="slideshow-img-silver">
+			</div>
+			<div class="image-slideshow">
+				<img src="images/collaborations/collab1.jpg" class="slideshow-img-silver">
+			</div>
+			<div class="image-slideshow">
+				<img src="images/collaborations/collab3.jpg" class="slideshow-img-silver">
+			</div>			
+			<div class="image-slideshow">
+				<img src="images/collaborations/collab6.jpg" class="slideshow-img-silver">
+			</div>
+			<div class="image-slideshow">
+				<img src="images/collaborations/collab5.jpg" class="slideshow-img-silver">
+			</div>
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
 	</div>
 </div>
 <div class="collab-main-container" id="survey">
@@ -140,5 +148,39 @@ title: Collaboration
 	</div>
 </div>
 
+<script>
+	function displayFunction(clicked_id) {
+	    var x = document.getElementById(clicked_id+"extension");
+	    if (x.style.display === "none") {
+	        x.style.display = "flex";
+	        document.getElementById(clicked_id+"text").innerHTML = "&#9660;&ensp; Click here to hide the full collaboration";
+	    } else {
+	        x.style.display = "none";
+	        document.getElementById(clicked_id+"text").innerHTML = "&#9654;&ensp; Click here to display the full collaboration";
+	    }
+	}
+</script>
+<script>
+	var slideIndex = 1;
+	showSlides(slideIndex);
 
+	function plusSlides(n) {
+	  showSlides(slideIndex += n);
+	}
+
+	function currentSlide(n) {
+	  showSlides(slideIndex = n);
+	}
+
+	function showSlides(n) {
+	  var i;
+	  var slides = document.getElementsByClassName("image-slideshow");
+	  if (n > slides.length) {slideIndex = 1}    
+	  if (n < 1) {slideIndex = slides.length}
+	  for (i = 0; i < slides.length; i++) {
+	      slides[i].style.display = "none";  
+	  }
+	  slides[slideIndex-1].style.display = "block";  
+	}
+</script>
 
