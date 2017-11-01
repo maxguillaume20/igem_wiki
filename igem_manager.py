@@ -155,6 +155,13 @@ class BaseIGemWikiManager(object):
         # So forcing HTTPS would lead to the "page contains insecure..." warning/error
         return "http://{}".format(self.get_base_host())
 
+    def get_base_uri(self):
+        """base url without http:// or https://"""
+        url = self.get_base_url()
+        url = url.replace("https://", "")
+        url = url.replace("http://", "")
+        return url
+
     def get_api_url(self):
         return "https://{}.igem.org/wiki/api.php".format(self.year)
 
@@ -345,10 +352,13 @@ class BaseIGemWikiManager(object):
             result = self._upload_chunks(page, path, comment=comment, chunk_size=chunk_size)
         return result
 
-    def _upload_file(self, page, source, comment=None):
+    def _upload_file(self, page, source, comment=None, prefix=None):
         result = {'result': False}
+        uri = page
+        if prefix is not None:
+            uri = "{}{}".format(prefix, uri)
         data = self.create_json(
-            action="upload", filename=page, comment=comment
+            action="upload", filename=uri, comment=comment
         )
         files = {'file': open(source, 'rb')}
         r = self.http_post(self.api_url, files=files, data=data)
