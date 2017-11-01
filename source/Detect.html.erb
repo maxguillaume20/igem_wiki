@@ -3,8 +3,8 @@ title: Detect
 layout: layouts/module_layout
 ---
 
-<% content_for :icon_src do %>
-  images/sensor_icon.png
+<% content_for :icon do %>
+  <img class="animated-module-icon" src='images/sensor_icon.png'>
 <% end %>
 
 <% content_for :vertical_text do %>
@@ -50,6 +50,15 @@ layout: layouts/module_layout
 	  		<li><%=reference%></li>
 	  	<% end %>
   	</ol>
+<% end %>
+
+<% content_for :supplementary do %>
+	<div id="last" class="module-collapsible-container-outer">
+	<p id="last" onclick="displayCollapsible(this.id)" class="in-text-link">&#9654;&ensp; Supplementary Material</p>
+	<div id="last" class="module-collapsible-container-inner" style="display:none;">
+	<% data.modules.detection.supplementary.each do |supp| %>
+	  <%= supp %>
+  <% end %>
 <% end %>
 
 
