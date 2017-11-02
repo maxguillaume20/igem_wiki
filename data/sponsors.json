@@ -1,5 +1,23 @@
 [
   {
+    "title": "Amsterdam University Fund",
+    "url": "http://www.auf.nl/",
+    "img": "images/sponsors/auf.png",
+    "id": "auf",
+    "order":"7",
+    "footorder": "1",
+    "text": "The Amsterdam University Fund (Stichting Amsterdams Universiteitsfonds) is a joint initiative of the University of Amsterdam Alumni Association (AUV) and the University of Amsterdam (UvA). The Fund operates as an independent foundation and is a recognised charity. Donations made to the Amsterdam University Fund are allocated in accordance with donors' wishes, with the gift donated going entirely to the designated beneficiary."
+  },
+  {
+    "title": "Graduate Schools of Science, UvA",
+    "url": "https://www.gss.uva.nl/",
+    "img": "images/sponsors/gss.png",
+    "id": "gss",
+    "order":"4",
+    "footorder": "15",
+    "text": "Within the Faculty of Science, the Graduate Schools and the Human Resources Department look after educational and career needs of Master's students and PhD candidates in the domains of Exact Sciences, Life and Earth Sciences, Information Sciences."
+  },
+  {
     "title": "The Amsterdam Institute for Molecules, Medicines and Systems",
     "url": "https://www.aimms.vu.nl/en/index.aspx",
     "img": "images/sponsors/aimms1.png",
@@ -18,15 +36,6 @@
     "text": "Until the 17th century, the area where Amsterdam Science Park now stands lay entirely under water. More than four metres below sea level, it took revolutionary technological advancement for the land to be reclaimed in 1629. Appropriately, today Amsterdam Science Park is home to one of the largest concentrations of beta sciences in Europe. This unique juncture of prestigious education, high-quality research and knowledge-intensive business has been carefully cultivated to stimulate innovation and collaboration. With the University of Amsterdam Faculty of Science, the Amsterdam University College, dozens of renowned research institutes and some 120 companies - from start-ups to multinationals - all working in the fields of IT, Life Sciences, advanced technology, and sustainability, Amsterdam Science Park has become a vibrant melting pot where business, science and innovation meet."
   },
   {
-    "title": "Amsterdam University Fund",
-    "url": "http://www.auf.nl/",
-    "img": "images/sponsors/auf.png",
-    "id": "auf",
-    "order":"7",
-    "footorder": "1",
-    "text": "The Amsterdam University Fund (Stichting Amsterdams Universiteitsfonds) is a joint initiative of the University of Amsterdam Alumni Association (AUV) and the University of Amsterdam (UvA). The Fund operates as an independent foundation and is a recognised charity. Donations made to the Amsterdam University Fund are allocated in accordance with donors' wishes, with the gift donated going entirely to the designated beneficiary."
-  },
-  {
     "title": "DSM",
     "url": "https://www.dsm.com/",
     "img": "images/sponsors/dsm.png",
@@ -34,15 +43,6 @@
     "order":"8",
     "footorder": "5",
     "text": "Royal DSM is a global science-based company active in health,nutrition and materials. By connecting its unique competences in life sciences and materials sciences DSM is driving economic prosperity, environmental progress and social advances to create sustainable value for all stakeholders simultaneously. DSM delivers innovative solutions that nourish, protect and improve performance in global markets such as food and dietary supplements, personal care, feed, medical devices, automotive, paints, electrical and electronics, life protection, alternative energy and bio-based materials. DSM and its associated companies deliver annual net sales of about &#8364;10 billion with approximately 25,000 employees. The company is listed on Euronext Amsterdam."
-  },
-  {
-    "title": "Graduate Schools of Science, UvA",
-    "url": "https://www.gss.uva.nl/",
-    "img": "images/sponsors/gss.png",
-    "id": "gss",
-    "order":"4",
-    "footorder": "15",
-    "text": "Within the Faculty of Science, the Graduate Schools and the Human Resources Department look after educational and career needs of Master's students and PhD candidates in the domains of Exact Sciences, Life and Earth Sciences, Information Sciences."
   },
   {
     "title": "Integrated DNA Technologies",
