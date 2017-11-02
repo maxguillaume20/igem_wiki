@@ -2,7 +2,7 @@
 //= require popper
 //= require bootstrap-sprockets
 
-// 
+//
 // Home
 //
 
@@ -14,11 +14,11 @@ function displayCollapsible(clicked_id) {
                 inner.style.display = "flex";
                 console.log(text.innerHTML);
                 text.innerHTML = text.innerHTML.replace(/▶/g, "▼");
-                
+
             } else {
                 inner.style.display = "none";
                 text.innerHTML = text.innerHTML.replace(/▼/g, "▶");
-                
+
             }
 
         }
@@ -26,7 +26,7 @@ function displayCollapsible(clicked_id) {
 
 // Move the module summaries' height so they match up with the diagonal linear gradient
 function setDynamicSizes () {
-	// Section Buttons 
+	// Section Buttons
 	var cw = $('.section-button').width();
 	$('.section-button').css('height', cw+'px');
     // Adjust line connector
@@ -51,9 +51,16 @@ function setDynamicSizes () {
     for (i=0; i<icons.length; i++){
         var marginTop = midHeight - (icons[i].offsetLeft - midWidth) * Math.tan(angle) + buffer;
         icons[i].style.marginTop = marginTop.toString() + 'px';
-        
+
     }
 };
 window.onload = setDynamicSizes;
 setTimeout(setDynamicSizes, 1000);
 window.onresize = setDynamicSizes;
+
+$(document).ready(function() {
+    if (window.location.hash !== "") {
+        var eid = $(window.location.hash).parents(".module-collapsible-container-outer")[0].id;
+        displayCollapsible(eid)
+    }
+});
