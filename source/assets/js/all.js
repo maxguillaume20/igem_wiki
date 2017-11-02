@@ -6,7 +6,22 @@
 // Home
 //
 
+function displayCollapsible(clicked_id) {
 
+            var inner = document.querySelector("#"+clicked_id+".module-collapsible-container-inner");
+            var text = document.querySelector("#"+clicked_id+".module-collapsible-container-outer > .in-text-link")
+            if (inner.style.display === "none") {
+                inner.style.display = "flex";
+                console.log(text.innerHTML);
+                text.innerHTML = text.innerHTML.replace(/▶/g, "▼");
+                
+            } else {
+                inner.style.display = "none";
+                text.innerHTML = text.innerHTML.replace(/▼/g, "▶");
+                
+            }
+
+        }
 
 
 // Move the module summaries' height so they match up with the diagonal linear gradient
