@@ -41,6 +41,102 @@
 	align-self: left;
 }
 
+#box21 > img, #box21 > figcaption {
+	width: 100%;
+	max-width: 700px;
+}
+
+#fig21 > img, #fig21 > figcaption {
+	width: 100%;
+	max-width: 900px;
+}
+
+#fig211 > img, #fig211 > figcaption {
+	width: 100%;
+	max-width: 700px;
+}
+
+#fig212 > img, #fig212 > figcaption {
+	width: 100%;
+	max-width: 700px;
+}
+
+#fig213 > img, #fig213 > figcaption {
+	width: 100%;
+	max-width: 700px;
+}
+
+#fig214 > img, #fig214 > figcaption {
+	width: 100%;
+	max-width: 700px;
+}
+
+#fig215 > img, #fig215 > figcaption {
+	width: 100%;
+	max-width: 500px;
+}
+
+#fig216 > img, #fig216 > figcaption {
+	width: 100%;
+	max-width: 700px;
+}
+
+
+#table21 > img, #table21 > figcaption {
+	width: 100%;
+	max-width: 700px;
+}
+
+#table22 > img, #table22 > figcaption {
+	width: 100%;
+	max-width: 400px;
+}
+
+#fig22 > img, #fig22 > figcaption {
+	width: 100%;
+	max-width: 900px;
+}
+
+#fig23 > img, #fig23 > figcaption {
+	width: 100%;
+	max-width: 900px;
+}
+
+#fig24 > img, #fig24 > figcaption {
+	width: 100%;
+	max-width: 900px;
+}
+
+#fig25 > img {
+	width: 70%;
+	max-width: 700px;
+}
+
+#fig25 > figcaption {
+	width: 70%;
+	margin-left: 15%;
+}
+
+#fig26 > img, #fig26 > figcaption {
+	width: 100%;
+	max-width: 600px;
+}
+
+#fig27 > img, #fig27 > figcaption {
+	width: 100%;
+	max-width: 600px;
+}
+
+#fig28 > img, #fig28 > figcaption {
+	width: 100%;
+	max-width: 600px;
+}
+
+#fig29 > img, #fig29 > figcaption {
+	width: 100%;
+	max-width: 600px;
+}
+
 #table31 > img, #table31 > figcaption {
 	width: 100%;
 	max-width: 900px;
@@ -66,7 +162,7 @@
 	max-width: 700px;
 }
 
- #fig33 > figcaption {
+#fig33 > figcaption {
  	width: 50%;
  	margin-left: 25%;
 }
@@ -151,7 +247,13 @@
 	max-width: 700px; 
 }
 
+
+
 .export-list {
+	text-align: left;
+}
+
+.produce-list {
 	text-align: left;
 }
 
