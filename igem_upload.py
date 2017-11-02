@@ -65,10 +65,7 @@ class IGemFile(object):
 
     @property
     def destination(self):
-        result = self._destination
-        if isinstance(result, str):
-            result = result.lower()
-        return result
+        return self._destination
 
     @destination.setter
     def destination(self, d):
@@ -76,10 +73,7 @@ class IGemFile(object):
 
     @property
     def url(self):
-        result = self._url
-        if isinstance(result, str):
-            result = result.lower()
-        return result
+        return self._url
 
     @url.setter
     def url(self, u):
@@ -504,7 +498,10 @@ class IGemUploader(BaseIGemWikiManager):
             if len(pieces) > 1:
                 target = pieces[-1]
             target = target.strip("/")
-            path = path.rsplit(".", 1)[0]
+            if path.endswith(".html"):
+                path = path.replace(".html", "", 1)
+            if path.endswith(".htm"):
+                path = path.replace(".htm", "", 1)
             if path == "/index":
                 path = "/"
             # we will set the parts["netloc"] to the right server
@@ -533,7 +530,8 @@ class IGemUploader(BaseIGemWikiManager):
             k, v = item
             if not r and isinstance(k, str):
                 url = self.prefix_title(fn)
-                r = fn.strip("./") == k.strip("./") or url.strip("./") == k.strip("./")
+                k = k.lower().strip("./")
+                r = fn.lower().strip("./") == k or url.strip("./") == k
             if not r and isinstance(v, IGemFile):
                 matches_names = fn.strip("./") in (v.destination, v.path, v.full_path, v.url)
                 matches_paths = False
@@ -545,14 +543,17 @@ class IGemUploader(BaseIGemWikiManager):
                     pass
                 r = matches_names or matches_paths
             if not r and isinstance(v, str):
-                r = fn.strip("./") == v.lower().strip("./")
+                r = fn.lower().strip("./") == v.lower().strip("./")
             return r
 
         matches = filter(is_match, self.uploaded_files.items())
         if len(matches) > 0:
             self.get_logger().debug("Matched {} to:\n{}".format(fn, [str(m) for m in matches]))
             match = matches[0]
-            result = match[0]
+            if isinstance(match[1], IGemFile):
+                result = match[1]
+            else:
+                result = match[0]
         return result
 
     def read_library(self, fp):
