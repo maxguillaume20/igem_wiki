@@ -2,6 +2,8 @@
 title: Engagement
 ---
 
+
+
 <div class="summary-container" id="outreach">
 	<div class="summary-col-left">
 		<img src="images/sections/practices.png" class="proto-icon">
@@ -15,6 +17,91 @@ title: Engagement
 		</div>
 	</div>
 </div>
+
+<div class="outr-container-light">
+	<div class="slideshow-silver" style="margin-top: 20px; width:60%;">
+			<div class="image-slideshow">
+				<img src="images/engagement/Engage_1.png" class="slideshow-img-silver">
+			</div>
+			<div class="image-slideshow">
+				<img src="images/engagement/Engage_2.png" class="slideshow-img-silver">
+			</div>
+			<div class="image-slideshow">
+				<img src="images/engagement/Engage_3.png" class="slideshow-img-silver">
+			</div>			
+			<div class="image-slideshow">
+				<img src="images/engagement/Engage_4.png" class="slideshow-img-silver">
+			</div>
+			<div class="image-slideshow">
+				<img src="images/engagement/Engage_5.png" class="slideshow-img-silver">
+			</div>
+			<div class="image-slideshow">
+				<img src="images/engagement/Engage_6.png" class="slideshow-img-silver">
+			</div>
+			<div class="image-slideshow">
+				<img src="images/engagement/Engage_7.png" class="slideshow-img-silver">
+			</div>			
+			<div class="image-slideshow">
+				<img src="images/engagement/Engage_8.png" class="slideshow-img-silver">
+			</div>
+			<div class="image-slideshow">
+				<img src="images/engagement/Engage_9.png" class="slideshow-img-silver">
+			</div>
+			<div class="image-slideshow">
+				<img src="images/engagement/Engage_10.png" class="slideshow-img-silver">
+			</div>
+			<div class="image-slideshow">
+				<img src="images/engagement/Engage_11.png" class="slideshow-img-silver">
+			</div>			
+			<div class="image-slideshow">
+				<img src="images/engagement/Engage_12.png" class="slideshow-img-silver">
+			</div>
+			<div class="image-slideshow">
+				<img src="images/engagement/Engage_13.png" class="slideshow-img-silver">
+			</div>
+			<div class="image-slideshow">
+				<img src="images/engagement/Engage_14.png" class="slideshow-img-silver">
+			</div>			
+			<div class="image-slideshow">
+				<img src="images/engagement/Engage_15.png" class="slideshow-img-silver">
+			</div>
+			<div class="image-slideshow">
+				<img src="images/engagement/Engage_16.png" class="slideshow-img-silver">
+			</div>
+			<div class="image-slideshow">
+				<img src="images/engagement/Engage_17.png" class="slideshow-img-silver">
+			</div>			
+			<div class="image-slideshow">
+				<img src="images/engagement/Engage_18.png" class="slideshow-img-silver">
+			</div>
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
+</div>
+
+<script>
+	var slideIndex = 1;
+	showSlides(slideIndex);
+
+	function plusSlides(n) {
+	  showSlides(slideIndex += n);
+	}
+
+	function currentSlide(n) {
+	  showSlides(slideIndex = n);
+	}
+
+	function showSlides(n) {
+	  var i;
+	  var slides = document.getElementsByClassName("image-slideshow");
+	  if (n > slides.length) {slideIndex = 1}    
+	  if (n < 1) {slideIndex = slides.length}
+	  for (i = 0; i < slides.length; i++) {
+	      slides[i].style.display = "none";  
+	  }
+	  slides[slideIndex-1].style.display = "block";  
+	}
+</script>
 
 <div class="outr-container-light">
 	<div class="outr-col-container">
@@ -125,9 +212,9 @@ title: Engagement
 		<p id="list" class="outr-text">
 			<font class="in-text-link">Newsletter</font> For all our sponsors, friends, family and other interested people, we made a bimonthly newsletter. In this newsletter, we show our new sponsors, the media attention we had in the past months and the progress we made in the lab.
 			<ul id="list" class="outr-text">
-				<li><a href="http://2017.igem.org/wiki/images/6/63/Newsletter_july_2017.pdf" target="_blank">July</a></li>
-				<li><a href="http://2017.igem.org/wiki/images/5/5f/T--Amsterdam--Engagement--newsletter2.pdf" target="_blank">September</a></li>
-				<li><a href="newsletter/newsletter_november_2017.pdf" target="_blank">November</a></li>
+				<li><a href="http://2017.igem.org/wiki/images/6/63/Newsletter_july_2017.pdf" target="_blank" class="in-text-link">July</a></li>
+				<li><a href="http://2017.igem.org/wiki/images/5/5f/T--Amsterdam--Engagement--newsletter2.pdf" target="_blank" class="in-text-link">September</a></li>
+				<li><a href="http://2017.igem.org/wiki/images/7/71/TAmsterdam_newsletter_november_2017.pdf" target="_blank" class="in-text-link">November</a></li>
 			</ul>
 		</p>
 		<p id="reach" class="outr-text">Reach: 200 people</p>
