@@ -58,6 +58,8 @@ ignore 'assets/css/_partials/*'
 configure :build do
   activate :minify_css
   activate :minify_javascript
+
+  config[:layout_wiki] = '1'
 end
 
 # Reload the browser automatically whenever files change
@@ -66,4 +68,6 @@ configure :development do
 
 	# When in development Publish using iGEM Wiki Layout
 	# page "/*", :layout => :wiki_layout
+
+	config[:layout_wiki] = '1'
 end

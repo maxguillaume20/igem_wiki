@@ -1,4 +1,4 @@
-<% if development? %>
+<% if config[:layout_wiki] == '1' %>
 	<%= partial "layouts/wiki_header" %>
 <% end %>
 <html>
@@ -97,6 +97,6 @@
     </div>
   </div>
 </div>
-<% if development? %>
+<% if config[:layout_wiki] == '1' %>
 	<%= partial "layouts/wiki_footer" %>
 <% end %>
