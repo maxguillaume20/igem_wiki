@@ -61,6 +61,8 @@ window.onresize = setDynamicSizes;
 $(document).ready(function() {
     if (window.location.hash !== "") {
         var eid = $(window.location.hash).parents(".module-collapsible-container-outer")[0].id;
-        displayCollapsible(eid)
+        if (typeof eid !== 'undefined' ) {
+	        displayCollapsible(eid)
+        }
     }
 });
