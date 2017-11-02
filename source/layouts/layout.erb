@@ -76,13 +76,14 @@
       </div>
 
       <div class="footer">
-        <div class="footer-col-left">
+        <div class="footer-wide">
           <% data.sponsors.each do |sponsor| %>
             <a href="<%=sponsor.url-%>" style = "order:<%=sponsor.footorder-%>" target="_blank">
               <%= image_tag sponsor.img, :class => "footer-sponsor-img", :id => sponsor.id %>
             </a>
           <% end %>
         </div>
+        <!--//
         <div class="footer-col-right">
           <a href="mailto:igem17.ams@gmail.com" target="_top">
             <img src="images/email_logo.jpg" class="footer-sponsor-img">
@@ -91,6 +92,7 @@
             <img src="images/facebook_logo.png" class="footer-sponsor-img">
           </a>
         </div>
+        //-->
       </div>
     </div>
   </div>

@@ -2,7 +2,7 @@
 
 /* Import includes */
 #bodyContent {
-    
+
     $main-color: rgba(88, 190, 190, 1);
     $light-background-color: #333;
     $dark-background-color: rgba(25,25,25,1);
@@ -176,5 +176,11 @@
 
     figcaption {
         text-align: justify !important;
+    }
+
+    footer-wide {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
     }
 }

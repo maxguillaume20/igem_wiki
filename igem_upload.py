@@ -534,13 +534,10 @@ class IGemUploader(BaseIGemWikiManager):
                 r = fn.lower().strip("./") == k or url.strip("./") == k
             if not r and isinstance(v, IGemFile):
                 matches_names = fn.strip("./") in (v.destination, v.path, v.full_path, v.url)
-                matches_paths = False
-                try:
-                    matches_paths = fn.strip("./") in (
-                        v.destination.strip("./"), v.path.strip("./"), v.full_path.strip("./"), v.url.strip("./")
-                    )
-                except AttributeError:
-                    pass
+                potentials = []
+                for s in [v.destination, v.path, v.full_path, v.url]:
+                    potentials.append( s.lower().strip("./") if isinstance(s, str) else "")
+                matches_paths = fn.strip("./") in potentials
                 r = matches_names or matches_paths
             if not r and isinstance(v, str):
                 r = fn.lower().strip("./") == v.lower().strip("./")
