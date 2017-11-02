@@ -7,17 +7,14 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title><%= current_page.data.title %></title>
-  <!-- icons -->
-  <script type="text/javascript" async
-    src="http://2017.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  </script>
 	<!-- include normalizer -->
 	<%= stylesheet_link_tag "normalize" %>
 	<!-- include auto generated css -->
-  <%= stylesheet_link_tag "all" %>
+	<%= stylesheet_link_tag "all" %>
 	<!-- include auto generated javascript -->
 	<%= javascript_include_tag "all" %>
-  <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+	<!-- include mathjax -->
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
 </head>
 <div class="site-wrapper">
 
@@ -43,8 +40,8 @@
             <li class="list-inline-item dropdown"><a class="nav-link" href="/Practices.html">Practices<span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="/Carbon.html">Carbon Efficiency</a></li>
-                <li><a class="nav-link" href="/Silver.html">HP Silver</a></li>
-                <li><a class="nav-link" href="/Gold_Integrated.html">HP Gold</a></li>
+                <li><a class="nav-link" href="/HP/Silver.html">HP Silver</a></li>
+                <li><a class="nav-link" href="/HP/Gold_Integrated.html">HP Gold</a></li>
                 <li><a class="nav-link" href="/Engagement.html">Engagement</a></li>
                 <li><a class="nav-link" href="/Safety.html">Safety</a></li>
               </ul>

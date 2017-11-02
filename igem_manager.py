@@ -87,6 +87,7 @@ class BaseIGemWikiManager(object):
         self._username = None
         self._password = None
         self._prefix = None
+        self._prefix_resources = None
         self._files = []
         self._session = requests.Session()
         self._token = None
@@ -132,6 +133,14 @@ class BaseIGemWikiManager(object):
         self._prefix = value
 
     @property
+    def resource_prefix(self):
+        return self._prefix_resources
+
+    @resource_prefix.setter
+    def resource_prefix(self, value):
+        self._prefix_resources = value
+
+    @property
     def token(self):
         return self._token
 
@@ -154,6 +163,13 @@ class BaseIGemWikiManager(object):
         # NOTE: Although I would love to use HTTPS the wiki loads stylesheets with HTTP
         # So forcing HTTPS would lead to the "page contains insecure..." warning/error
         return "http://{}".format(self.get_base_host())
+
+    def get_base_uri(self):
+        """base url without http:// or https://"""
+        url = self.get_base_url()
+        url = url.replace("https://", "")
+        url = url.replace("http://", "")
+        return url
 
     def get_api_url(self):
         return "https://{}.igem.org/wiki/api.php".format(self.year)
@@ -338,7 +354,7 @@ class BaseIGemWikiManager(object):
         # result = {'result': False}
         page = self.prefix_title(title)
         # get total file size
-        fs = os.path.getsize(path)
+        fs = os.path.getsize(path) if os.path.exists(path) else 0
         if fs < chunk_size:
             result = self._upload_file(page, path, comment=comment)
         else:
@@ -347,8 +363,9 @@ class BaseIGemWikiManager(object):
 
     def _upload_file(self, page, source, comment=None):
         result = {'result': False}
+        uri = page
         data = self.create_json(
-            action="upload", filename=page, comment=comment
+            action="upload", filename=uri, comment=comment
         )
         files = {'file': open(source, 'rb')}
         r = self.http_post(self.api_url, files=files, data=data)
@@ -434,6 +451,13 @@ class BaseIGemWikiManager(object):
                 result['offset'] = upload.get("offset")
         return result
 
+    def read_file(self, fn):
+        result = None
+        if os.path.exists(fn):
+            with open(fn, "rb") as src:
+                result = "".join(src.readlines())
+        return result
+
     @classmethod
     def run(cls):
         parser = cls.create_parser()
@@ -511,6 +535,9 @@ class BaseIGemWikiManager(object):
         parser.add_argument(
             '--prefix', help="Prefix to add before each title"
         )
+        parser.add_argument(
+            '--resource-prefix', dest="resource_prefix", help="Add prefix to each resource file name"
+        )
         return parser
 
     def parse_arguments(self, arguments):
@@ -531,6 +558,9 @@ class BaseIGemWikiManager(object):
         prefix = arguments.get("prefix")
         if prefix is not None:
             self.prefix = prefix
+        resource_prefix = arguments.get("resource_prefix")
+        if resource_prefix is not None:
+            self.resource_prefix = resource_prefix
         files = arguments.get("files")
         if not isinstance(files, (tuple, list)):
             files = [files]

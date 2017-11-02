@@ -54,21 +54,11 @@ layout: layouts/module_layout
 
 <% content_for :supplementary do %>
 	<div id="last" class="module-collapsible-container-outer">
-	<p id="last" onclick="displayCollapsible(this.id)" class="in-text-link">&#9654;&ensp; Supplementary Material</p>
-	<div id="last" class="module-collapsible-container-inner" style="display:none;">
-		<% data.modules.detection.supplementary.each do |supp| %>
-		  <%= supp %>
-	  <% end %>
+		<p id="last" onclick="displayCollapsible(this.id)" class="in-text-link">&#9654;&ensp; Supplementary Material</p>
+		<div id="last" class="module-collapsible-container-inner" style="display:none;">
+			<% data.modules.detection.supplementary.each do |supp| %>
+			  <%= supp %>
+		  <% end %>
+		</div>
 	</div>
 <% end %>
-
-
-
-
-
-
-
-
-
-
-
