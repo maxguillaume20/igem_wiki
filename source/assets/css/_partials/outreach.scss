@@ -13,13 +13,13 @@
 
 }
 
-.summary-col-mid#outreach { 
+.summary-col-mid#outreach {
 	width: 80%;
 }
 
 /* Outreach List */
 
-.outr-container-light {
+.outer-container-light {
 	min-height: 275px;
 	background-color: $light-background-color;
 	display: flex;
@@ -29,22 +29,22 @@
 	align-items: stretch !important;
 }
 
-.outr-col-container {
+.outer-col-container {
 	width: 40%;
 	margin: 5%;
 	margin-top: 3% !important;
 }
 
-.outr-icon {
+.outer-icon {
 	margin: 20px;
 	width: 100px;
 }
 
-.outr-title {
+.outer-title {
 	color: $main-color;
 }
 
-.outr-text#list {
+.outer-text#list {
 	text-align: justify;
 	font-size: 18px;
 	align-items: center;
@@ -52,7 +52,7 @@
 }
 
 
-.outr-text#reach {
+.outer-text#reach {
 	text-align: justify;
 	font-size: 18px;
 	margin-top: 0px;
