@@ -213,32 +213,40 @@ class BaseIGemWikiManager(object):
 
     def http_get(self, url, _is_json=True, **kwargs):
         session = self._session
+        result = None
         if self.runs_dry():
-            result = None
+            self.get_logger().debug("Response to {}:\n{}".format(url, True))
         else:
-            result = session.get(url, **kwargs)
-            if result.status_code == 200:
+            try:
+                result = session.get(url, **kwargs)
+            except requests.ConnectionError as ce:
+                self.get_logger().debug("Connection error: {}".format(ce), exc_info=1)
+            if result is not None and result.status_code == 200:
                 response = result
                 if _is_json:
                     response = result.json()
-                self.get_logger().debug("Response to {}:\n{}".format(url, response))
+                self.get_logger().debug("SUCCESS Response to {}:\n{}".format(url, response))
             else:
-                self.get_logger().debug("Response to {}:\n{}".format(url, result))
+                self.get_logger().debug("FAILED Response to {}:\n{}".format(url, result))
         return result
 
     def http_post(self, url, _is_json=True, **kwargs):
         session = self._session
+        result = None
         if self.runs_dry():
-            result = None
+            self.get_logger().debug("Response to {}:\n{}".format(url, True))
         else:
-            result = session.post(url, **kwargs)
-            if result.status_code == 200:
+            try:
+                result = session.post(url, **kwargs)
+            except requests.ConnectionError as ce:
+                self.get_logger().debug("Connection error: {}".format(ce), exc_info=1)
+            if result is not None and result.status_code == 200:
                 response = result
                 if _is_json:
                     response = result.json()
-                self.get_logger().debug("Response to {}:\n{}".format(url, response))
+                self.get_logger().debug("SUCCESS Response to {}:\n{}".format(url, response))
             else:
-                self.get_logger().debug("Response to {}:\n{}".format(url, result))
+                self.get_logger().debug("FAILED Response to {}:\n{}".format(url, result))
         return result
 
     def create_json(self, action, _params=None, **kwargs):

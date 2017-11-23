@@ -1,5 +1,5 @@
-<% if development? %>
-	<%= partial "layouts/wiki_header" %>
+<% if config[:layout_wiki] == '1' %>
+        <%= partial "layouts/wiki_header" %>
 <% end %>
 
 <html>
@@ -63,6 +63,7 @@
 		<span class="text-muted">Place sticky footer content here.</span>
 	</div>
 </footer>
-<% if development? %>
-	<%= partial "layouts/wiki_footer" %>
+
+<% if config[:layout_wiki] == '1' %>
+        <%= partial "layouts/wiki_footer" %>
 <% end %>
