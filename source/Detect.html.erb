@@ -30,18 +30,18 @@ layout: layouts/module_layout
 
 <% content_for :collapsibles do %>
 	<% data.modules.detection.collapsibles.each do |collapsible| %>
-	  <div id="<%=collapsible.id-%>" class="module-collapsible-container-outer">
-	  	<p id="<%=collapsible.id-%>" onclick="displayCollapsible(this.id)" class="in-text-link">&#9654;&ensp; <%=collapsible.title%></p>
-	  	<div id="<%=collapsible.id-%>" class="module-collapsible-container-inner" style="display:none;">
-	  		<% collapsible.sections.each do |section| %>
-	  			<p id="<%=section.id%>" class="collapsible-main-header"><%=section.title%></p>
-		  		<% section.contents.each do |content| %>
-		  			<%= content %>
-		  		<% end %>
-	  		<% end %>
-	  	</div>
-	  </div>
-  <% end %>
+		<div id="<%=collapsible.id-%>" class="module-collapsible-container-outer">
+	  	    <p id="<%=collapsible.id-%>" onclick="displayCollapsible(this.id)" class="in-text-link">&#9654;&ensp; <%=collapsible.title%></p>
+	  	    <div id="<%=collapsible.id-%>" class="module-collapsible-container-inner" style="display:none;">
+	  		    <% collapsible.sections.each do |section| %>
+	  			    <p id="<%=section.id%>" class="collapsible-main-header"><%=section.title%></p>
+		  		    <% section.contents.each do |content| %>
+		  			    <%= content %>
+		  		    <% end %>
+	  		    <% end %>
+	  	    </div>
+	    </div>
+    <% end %>
 <% end %>
 
 <% content_for :references do %>
