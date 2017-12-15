@@ -69,5 +69,5 @@ configure :development do
 	# When in development Publish using iGEM Wiki Layout
 	# page "/*", :layout => :wiki_layout
 
-	config[:layout_wiki] = '0'
+	config[:layout_wiki] = '1'
 end

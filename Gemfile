@@ -4,7 +4,7 @@ gem 'middleman', '~> 4.2'
 gem 'middleman-autoprefixer', '~> 2.7'
 gem 'middleman-livereload'
 
-gem 'middleman-sprockets'
+gem 'middleman-sprockets', "~> 4.0.0.rc"
 gem 'bootstrap', '~> 4.0.0.beta'
 gem "jquery-middleman"
 

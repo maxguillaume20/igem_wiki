@@ -17,6 +17,11 @@ else:
 __author__ = "Joeri Jongbloets <joeri@jongbloets.net>"
 
 
+def inform(msg, start="", end="\n"):
+    sys.stdout.write("{}{}{}".format(start, msg, end))
+    sys.stdout.flush()
+
+
 class IGemFile(object):
 
     IMAGE_EXTENSIONS = ('jpg', 'jpeg', 'png', 'bmp', 'gif', 'mp4')
@@ -159,19 +164,25 @@ class IGemUploader(BaseIGemWikiManager):
 
     def execute(self, action):
         # collect files
-        self.collect_patterns(self._files)
+        inform("## Collecting files from patterns")
+        self.collect(self._files)
         if action == "upload":
+            inform("## Login on iGem Wiki")
             if self.login():
                 if isinstance(self.library, str):
+                    inform("## Loading uploaded files library")
                     self.read_library(self.library)
-                uploads = self.upload_files()
-                self.get_logger().info("Uploaded {} files".format(uploads))
+                inform("## Uploading Files")
+                uploads = self.process()
+                inform("Uploaded {} files".format(uploads))
                 if isinstance(self.library, str):
+                    inform("## Writing uploaded files library")
                     self.write_library(self.library, self.uploaded_files)
             else:
                 self.get_logger().info("Unable to login with the given username/password")
+        inform("## Done")
 
-    def collect_patterns(self, patterns):
+    def collect(self, patterns):
         results = {}
         for pattern in patterns:
             result = self.collect_pattern(pattern)
@@ -217,32 +228,52 @@ class IGemUploader(BaseIGemWikiManager):
             fn = fn.full_path
         return super(IGemUploader, self).read_file(fn)
 
-    def upload_files(self):
+    def process(self):
         results = 0
         # first we upload resources so we can update their destinations
         if not self._skip_resources:
             resources = filter(lambda f: f.is_resource(), self.collected_files.values())
-            print("## Uploading {} resources".format(len(resources)))
-            for resource in resources:
-                results += 1 if self.upload_resource(resource) else 0
-        # upload all stylesheets
+            results += self.process_files(resources, "resources")
         if not self._skip_stylesheets:
             resources = filter(lambda f: f.is_stylesheet(), self.collected_files.values())
-            print("## Uploading {} stylesheets".format(len(resources)))
-            for resource in resources:
-                results += 1 if self.upload_stylesheet(resource) else 0
+            results += self.process_files(resources, "stylesheet")
         if not self._skip_javascripts:
             resources = filter(lambda f: f.is_javascript(), self.collected_files.values())
-            print("## Uploading {} javascripts".format(len(resources)))
-            for resource in resources:
-                results += 1 if self.upload_javascript(resource) else 0
+            results += self.process_files(resources, "javascript")
         if not self._skip_html:
-            # upload all html
-            resources = filter(lambda f: f.is_html(), self.collected_files.values())
-            print("## Uploading {} html files".format(len(resources)))
-            for resource in resources:
-                results += 1 if self.upload_html(resource) else 0
+            resources = list(filter(lambda f: f.is_html(), self.collected_files.values()))
+            results += self.process_files(resources, "html")
         return results
+
+    def process_files(self, items, ftype="html"):
+        # prepare
+        ftf = None
+        if ftype == "resources":
+           ftf = self.upload_resource
+        if ftype == "stylesheet":
+            ftf = self.upload_stylesheet
+        if ftype == "javascript":
+            ftf = self.upload_javascript
+        if ftype == "html":
+            ftf = self.upload_html
+        items = list(items)
+        total = len(items)
+        inform("## Processing {} {} files.".format(total, ftype))
+        success = 0
+        if ftf is not None:
+            for idx, item in enumerate(items):
+                inform("-- {:3}/{:3} Processing {}".format(
+                        idx, total, item.path
+                    ), end="\r"
+                )
+                success += 1 if ftf(item) else 0
+                inform("\033[K", end="\r")
+        else:
+            raise ValueError("Unknown File Type: {}".format(ftype))
+        inform("## Processed {} {} files. SUCCESS: {} | FAILED: {}".format(
+            total, ftype, success, total - success)
+        )
+        return success
 
     def upload_file(self, f, content=None):
         """Core function acts as interface between edit and the upload methods
@@ -289,10 +320,13 @@ class IGemUploader(BaseIGemWikiManager):
         f.destination = self.prefix_title(name)
         if f.exists():
             # obtain content
+            inform("-- Reading {}".format(f.path), end="\r")
             content = self.read_file(f)
             # process content
+            inform("-- Preparing {}".format(f.path), end="\r")
             content = self.prepare_html(content)
-            self.upload_file(f, content)
+            inform("-- Uploading {} => {}".format(f.path, f.url), end="\r")
+            result = self.upload_file(f, content)
         return result
 
     def upload_stylesheet(self, f):
@@ -310,10 +344,13 @@ class IGemUploader(BaseIGemWikiManager):
         f.destination = self.prefix_title(name)
         if f.exists():
             # obtain content
+            inform("-- Reading {}".format(f.path), end="\r")
             content = self.read_file(f)
             # process content
+            inform("-- Preparing {}".format(f.path), end="\r")
             content = self.prepare_stylesheet(content)
-            self.upload_file(f, content)
+            inform("-- Uploading {} => {}".format(f.path, f.url), end="\r")
+            result = self.upload_file(f, content)
         return result
 
     def upload_javascript(self, f):
@@ -331,10 +368,13 @@ class IGemUploader(BaseIGemWikiManager):
         f.destination = self.prefix_title(name)
         if f.exists():
             # obtain content
+            inform("-- Reading {}".format(f.path), end="\r")
             content = self.read_file(f)
             # process content
+            inform("-- Preparing {}".format(f.path), end="\r")
             content = self.prepare_javascript(content)
-            self.upload_file(f, content)
+            inform("-- Uploading {} => {}".format(f.path, f.url), end="\r")
+            result = self.upload_file(f, content)
         return result
 
     def upload_resource(self, f):
@@ -350,8 +390,8 @@ class IGemUploader(BaseIGemWikiManager):
             fn = "{}{}".format(self.resource_prefix, fn)
         f.destination = os.path.join(fd, fn)
         if f.exists():
+            inform("-- Uploading {} => {}".format(f.path, f.url), end="\r")
             result = self.upload_file(f)
-            self.get_logger().info("Upload attachment {} => {}: {}".format(f.path, f.url, result))
         return result
 
     def prepare_html(self, html):
@@ -536,14 +576,14 @@ class IGemUploader(BaseIGemWikiManager):
                 matches_names = fn.strip("./") in (v.destination, v.path, v.full_path, v.url)
                 potentials = []
                 for s in [v.destination, v.path, v.full_path, v.url]:
-                    potentials.append( s.lower().strip("./") if isinstance(s, str) else "")
+                    potentials.append(s.lower().strip("./") if isinstance(s, str) else "")
                 matches_paths = fn.strip("./") in potentials
                 r = matches_names or matches_paths
             if not r and isinstance(v, str):
                 r = fn.lower().strip("./") == v.lower().strip("./")
             return r
 
-        matches = filter(is_match, self.uploaded_files.items())
+        matches = list(filter(is_match, self.uploaded_files.items()))
         if len(matches) > 0:
             self.get_logger().debug("Matched {} to:\n{}".format(fn, [str(m) for m in matches]))
             match = matches[0]
@@ -556,7 +596,7 @@ class IGemUploader(BaseIGemWikiManager):
     def read_library(self, fp):
         results = {}
         if os.path.exists(fp):
-            with open(fp, "rb") as src:
+            with open(fp, "r") as src:
                 for line in src.readlines():
                     k, v = line.strip("\n").split("\t")
                     if None not in (k, v) and "" not in (k, v):
@@ -572,7 +612,7 @@ class IGemUploader(BaseIGemWikiManager):
         result = False
         fd = os.path.dirname(os.path.realpath(fp))
         if not self.runs_dry() and os.path.exists(fd):
-            with open(fp, "wb") as dest:
+            with open(fp, "w") as dest:
                 for k, v in library.items():
                     if isinstance(v, IGemFile):
                         dest.write("{}\t{}\n".format(k, v.path))
@@ -630,7 +670,6 @@ class IGemUploader(BaseIGemWikiManager):
         skip_html = arguments.get("skip_html")
         if skip_html is not None:
             self._skip_html = skip_html is True
-
 
 if __name__ == "__main__":
     IGemUploader.run()

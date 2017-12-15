@@ -9,6 +9,7 @@ Copyright under MIT License, see LICENSE.
 
 from __future__ import print_function
 from datetime import datetime as dt
+import six
 import requests
 import logging
 import os
@@ -112,7 +113,7 @@ class BaseIGemWikiManager(object):
 
     @username.setter
     def username(self, u):
-        if isinstance(u, (unicode, str)):
+        if isinstance(u, six.string_types):
             self._username = u
 
     @property
@@ -121,7 +122,7 @@ class BaseIGemWikiManager(object):
 
     @password.setter
     def password(self, p):
-        if isinstance(p, (unicode, str)):
+        if isinstance(p, six.string_types):
             self._password = p
 
     @property
@@ -359,6 +360,8 @@ class BaseIGemWikiManager(object):
         :param chunk_size: Size of the chunks to upload file in  (Default 1 MB)
         :rtype: dict[str, str | bool | int | float]
         """
+        sys.stdout.write("-- Uploading {} => {}\r".format(path, title))
+        sys.stdout.flush()
         # result = {'result': False}
         page = self.prefix_title(title)
         # get total file size
@@ -367,6 +370,8 @@ class BaseIGemWikiManager(object):
             result = self._upload_file(page, path, comment=comment)
         else:
             result = self._upload_chunks(page, path, comment=comment, chunk_size=chunk_size)
+        sys.stdout.write("\033[K")
+        sys.stdout.flush()
         return result
 
     def _upload_file(self, page, source, comment=None):
@@ -463,7 +468,7 @@ class BaseIGemWikiManager(object):
         result = None
         if os.path.exists(fn):
             with open(fn, "rb") as src:
-                result = "".join(src.readlines())
+                result = src.read()
         return result
 
     @classmethod
@@ -471,6 +476,8 @@ class BaseIGemWikiManager(object):
         parser = cls.create_parser()
         arguments = vars(parser.parse_args())
         verbosity = arguments.get("verbose")
+        if verbosity is None:
+            verbosity = 0
         if verbosity > 0:
             level = 60 - (verbosity * 10)
             if level < 0:
@@ -635,6 +642,7 @@ class IGemWikiManager(BaseIGemWikiManager):
 
     def parse_arguments(self, arguments):
         super(IGemWikiManager, self).parse_arguments(arguments)
+
 
 if __name__ == "__main__":
     IGemWikiManager.run()
